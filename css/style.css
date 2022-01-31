@@ -2556,7 +2556,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .background-bp {
-  background: url(../img/background-bp.png) no-repeat;
+  background: url(../img/background-bp.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -2755,7 +2755,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .quote_block {
-  background: url(../img/quote-background.png) no-repeat;
+  background: url(../img/quote-background.jpg) no-repeat;
   background-size: cover;
   padding: 5.312rem 0 5.312rem;
   border-radius: 10px;
@@ -2925,7 +2925,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .before-vaccine {
-  background: url(../img/before-vaccine-background.png) no-repeat;
+  background: url(../img/before-vaccine-background.jpg) no-repeat;
   background-size: cover;
   padding-top: 6.875rem;
   padding-bottom: 31.5rem;
@@ -3043,7 +3043,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .discount {
-  background: url(../img/discount-background.png) no-repeat;
+  background: url(../img/discount-background.jpg) no-repeat;
   padding: 10.5rem 0 11.25rem;
 }
 
@@ -3139,7 +3139,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .about-company {
-  background: url(../img/about-background.png) no-repeat;
+  background: url(../img/about-background.jpg) no-repeat;
   background-size: cover;
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
