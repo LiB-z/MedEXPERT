@@ -4,13 +4,15 @@
 		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/datepicker.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-		<title>Тесты на COVID-19</title>
+		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+		<title>Записаться онлайн</title>
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="header background-bp lock-padding">
+			<header class="header lock-padding">
 				<div class="main__wrapper header__wrapper">
 					<div class="header-menu">
 						<div class="header__logo">
@@ -21,11 +23,11 @@
 						</div>
 						<div class="header-menu__content">
 							<ul class="header__nav">
-								<li><a href="#type" class="header__nav__link">Анализ на короновирус</a></li>
-								<li><a href="#features" class="header__nav__link">Преимущества</a></li>
-								<li><a href="#before-vaccine" class="header__nav__link">Обследование</a></li>
-								<li><a href="#about-company" class="header__nav__link">О нас</a></li>
-								<li><a href="#contacts" class="header__nav__link">Адреса</a></li>
+								<li><a href="index1.html#type" class="header__nav__link">Анализ на короновирус</a></li>
+								<li><a href="index1.html#features" class="header__nav__link">Преимущества</a></li>
+								<li><a href="index1.html#before-vaccine" class="header__nav__link">Обследование</a></li>
+								<li><a href="index1.html#about-company" class="header__nav__link">О нас</a></li>
+								<li><a href="index1.html#contacts" class="header__nav__link">Адреса</a></li>
 							</ul>
 							<div class="header__callback">
 								<a class="header__callback_number" href="tel:+74012519000" >+7 (4012) 519-000</a>
@@ -33,759 +35,379 @@
 							</div>
 						</div>
 					</div>
-					<div class="header-intro main__wrapper">
-						<p class="intro-description">
-							тесты в Калининграде
-						</p>
-						<h1 class="header-title title">на COVID-19</h1>
-						<ul class="intro-features">
-							<li class="intro-features-item-1">Быстро</li>
-							<li class="intro-features-item-2">Качественно</li>
-							<li class="intro-features-item-3">Выявите инфекцию <br> с первых дней заражения</li>
-						</ul>
-						<a href="#type" class="tests-link">Выбрать тест</a>
-					</div>
 				</div>
 			</header>
 			<main class="page">
-				<section class="type" id="type">
-					<div class="main__wrapper type__wrapper">
-						<p class="title-description">типы анализов</p>
-						<h2 class="type__title title">На коронавирус</h2>
-						<div class="type-slide__wrapper swiper-container" >
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="vaccine-slide">
-										<div class="vaccine-slide__top">
-											<div class="vaccine-slide__title">Молекулярная диагностика (ПЦР)</div>
-											<div class="vaccine-slide__description">
-												Выявляет генетический материал вируса (РНК) в биологическом материале человека.
-												<br>
-												<br>
-												Полимеразная цепная реакция с транскрипцией в режиме реального времени (ОТ-ПЦР) Изотермическая амплификация (RT-LAMP).
-											</div>
-											<div class="vaccine-slide__tag">
-												Мазок из носа и ротоглотки
-											</div>
+				<section class="form-1">
+					<div class="main__wrapper form-1__wrapper">
+						<h1 class="form-1__title title">
+							Заполните информацию
+						</h1>
+						<form action="#" method="post" class="form_datetime" id="datetimeForm">
+								<ul class="datetime__list">
+									<span class="empty-fields">Заполните все поля</span>
+									<li class="datetime__item analysis-type__field">
+										<select name="analysis-type" class="analysis-type rfield" id="analysisType">
+											<option selected disabled value="" class="select-placeholder">Выберите тест</option>
+											<option>Молекулярная диагностика (ПЦР)</option>
+											<option>Анализ на вирусные антигены</option>
+											<option>Анализ на антитела (IgM и IgG)</option>
+											<option>Экспресс-анализ на антитела</option>
+										</select>
+										<label for="analysisType"><i class="material-icons">keyboard_arrow_down</i></label>
+									</li>
+									<li class="datetime__item department__field">
+										<select name="department" class="department rfield" id="department">
+											<option selected disabled value="" class="select-placeholder">Выберите отделение</option>
+											<option>Калининград, ул. Космическая, 29</option>
+											<option>Калининград, ул. Франца Лефорта, 12</option>
+											<option>Калининград, ул Подп. Иванникова, 8</option>
+										</select>
+										<label for="department"><i class="material-icons">keyboard_arrow_down</i></label>
+									</li>
+									<li class="datetime__item date-time__field">
+										<div class="date-time__column date__column">
+											<label for="visitdate" class="visitdate__title">Выберите дату</label>
+											<input type="text" class="visitdate rfield" placeholder="Выберите дату" data-position="bottom right" id="visitdate" autocomplete="off">
+											<input type="text" class="visitdate__result" id='visitdateResualt' disabled>
 										</div>
-										<div class="vaccine-slide__bottom">
-											<div class="vaccine-slide__price">1400 ₽</div>
-											<a href="index.html" class="vaccine-slide__btn">Записаться онлайн</a>
+										<div class="date-time__column time__column">
+											<label for="visitTime" class="visitTime__title" id="visitTimeTitle">Выберите время</label>
+											<div class="visitTime__wrapper">
+												<ul class="visitTime__list">
+													<li class="visitTime__columns">
+														<div class="visitTime__item active">12:30</div>
+														<div class="visitTime__item">12:30</div>
+														<div class="visitTime__item">12:30</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item">13:30</div>
+														<div class="visitTime__item active">13:30</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item active">15:00</div>
+														<div class="visitTime__item">15:00</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item">15:00</div>
+														<div class="visitTime__item">15:00</div>
+													</li>
+												</ul>
+												<i class="material-icons time-icon active">alarm_on</i>
+											</div>
+											<input type="text" class="visitTime__result rfield" id='visitTime' autocomplete="off">
 										</div>
+										<div class="date-time__column result__column disabled">
+											<p class="datetime_-title">Запись на прием:</p><p class="datetime-out"></p>
+										</div> 
+									</li>
+									<li class="datetime__button">
+										<button class="datetime__btn-submit btn__submit">Продолжить заполнять анкету <i class="material-icons">trending_flat</i></button>
+										<div class="datetime-help">
+											Возникли сложности?
+											<a class="datetime-help__link popup-link" href="#callbackPopup">Оставьте номер телефона и мы свяжемся с вами</a>
+										</div>
+									</li>
+								</ul>
+								<div class="datetime-select popup" id="datetimeSelect">
+									<div class="datetime-select__wrapper">
+										<div class="datetime-select__content">
+											<div class="datetime-select-title">
+												<p class="datetime-select__text">Выберите время</p>
+											</div>
+											<div class="visitTime__wrapper">
+												<ul class="visitTime__list">
+													<li class="visitTime__columns">
+														<div class="visitTime__item active">12:30</div>
+														<div class="visitTime__item">12:30</div>
+														<div class="visitTime__item disabled">12:30</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item">13:30</div>
+														<div class="visitTime__item active">13:30</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item active">15:00</div>
+														<div class="visitTime__item">15:00</div>
+													</li>
+													<li class="visitTime__columns">
+														<div class="visitTime__item">15:00</div>
+														<div class="visitTime__item">15:00</div>
+													</li>
+												</ul>
+												<i class="material-icons time-icon active">alarm_on</i>
+											</div>
+											<div class="date-time__column result__column disabled">
+												<p class="datetime_-title">Запись на прием:</p><p class="datetime-out"></p>
+											</div> 
+											<button class="datetime__btn-submit btn__submit datetime-popup__btn-submit">Подтвердить и заполнить анкету <i class="material-icons">trending_flat</i></button>
+											<a href="" class="fas fa-times visitTime__close-button close-button"></a>
 									</div>
 								</div>
-								<div class="swiper-slide">
-									<div class="vaccine-slide">
-										<div class="vaccine-slide__top">
-											<div class="vaccine-slide__title">Анализ на вирусные антигены</div>
-											<div class="vaccine-slide__description">
-												Выявляет белки, входящие в состав вируса, которые распознаются иммунной системой.
-												<br>
-												<br>
-												Иммунохроматографический экспресс-тест.
-											</div>
-											<div class="vaccine-slide__tag">
-												Мазок из носа и ротоглотки
-											</div>
-										</div>
-										<div class="vaccine-slide__bottom">
-											<div class="vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="vaccine-slide">
-										<div class="vaccine-slide__top">
-											<div class="vaccine-slide__title">Анализ на антитела (IgM и IgG)</div>
-											<div class="vaccine-slide__description">
-												Выявляет антитела к возбудителю инфекции, которые вырабатываются в организме человека в результате его контакта с вирусом.
-												<br>
-												<br>
-												Иммуноферментный анализ (АФА) Иммунохемилюминесцентный анализ (ИХЛА)
-											</div>
-											<div class="vaccine-slide__tag">
-												Кровь из вены
-											</div>
-										</div>
-										<div class="vaccine-slide__bottom">
-											<div class="vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="vaccine-slide">
-										<div class="vaccine-slide__top">
-											<div class="vaccine-slide__title">Экспресс-анализ на антитела</div>
-											<div class="vaccine-slide__description">
-												Выявляет антитела к возбудителю инфекции - иммунные клетки, которые вырабатываются в организме человека в результате его контакты с вирусом.
-												<br>
-												<br>
-												Иммунохроматографический экспресс-тест
-											</div>
-											<div class="vaccine-slide__tag">
-												Кровь капиллярная/кровь из вены
-											</div>
-										</div>
-										<div class="vaccine-slide__bottom">
-											<div class="vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-							</div>
+						</form>
+					</div>
+				</section>
+				<section class="registration_info">
+					<div class="main__wrapper registration__wrapper">
+						<h1 class="registration__title title">
+							Записаться онлайн
+						</h1>
+						<div class="registration__text">
+							Заполните форму для записи на анализ в лаборатории “Медэксперт”
 						</div>
 					</div>
 				</section>
-				<section class="quote_block">
-					<div class="main__wrapper quote_block__wrapper">
-						<div class="quote_block__text">
-							Большое значение имеет то, какими именно тест-системами пользуется лаборатория. Чем выше чувствительность таких наборов, тем качественнее результат. В нашей ПЦР-лаборатории используются тест-системы <span>РеалБест РНК SARS-CoV-2</span> высокой чувствительности, а качество исследований соответствует всем стандартам, как российским, так и международным.
-							<p class="quote_block__source">
-								Семейкина Елена Александровна
-							</p>
-							<p class="quote_block__source-2">
-								заведующая ПЦР лабораторией
-							</p>
-						</div>
-					</div>
-				</section>
-				<section class="features" id="features">
-					<div class="features__wrapper main__wrapper">
-						<p class="title-description">преимущества</p>
-						<h2 class="features__title title">
-							С нами удобнее
-						</h2>
-						<ul class="features-list">
-							<li class="features__item features__item-1">
-								<p class="features__item-title">Сроки</p>
-								<p class="features__description">
-									Результаты ПЦР теста будут вам предоставлены в короткие сроки. Обычно это <span>от 6 до 24 часов</span>
-								</p>
-							</li>
-							<li class="features__item features__item-2">
-								<p class="features__item-title">Собственная лаборатория</p>
-								<p class="features__description">
-									Единственная в городе сертифицированная лаборатория, одобреная Роспотребнадзором
-								</p>
-							</li>
-							<li class="features__item features__item-3">
-								<p class="features__item-title">Доступность</p>
-								<p class="features__description">
-									Сеть клиник “Медэксперт” расположена почти во всех районах г. Калининграда. Адреса клиник можете посмотреть здесь 
-								</p>
-							</li>
-							<li class="features__item features__item-4">
-								<p class="features__item-title">Результаты онлайн</p>
-								<p class="features__description">
-									Нет необходимости ездить в клинику за результатами анализа. Мы оповещаем своих клиентов по СМС, а так же по электронной почте
-								</p>
-							</li>
-							<li class="features__item features__item-5">
-								<p class="features__item-title">Без остановки</p>
-								<p class="features__description">
-									Мы работаем круглосуточно и готовы принять вас даже в выходные дни, когда другие лаборатории не работают 
-								</p>
-							</li>
-							<li class="features__item features__item-6">
-								<p class="features__item-title">Безболезненно</p>
-								<p class="features__description">
-									Мы берем мазок аккуратно, не доставляя боли и неприятных ощущений своим клиентам 
-								</p>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="before-vaccine" id="before-vaccine">
-					<div class="main__wrapper before-vaccine__wrapper">
-						<p class="title-description">обследования</p>
-						<h2 class="before-vaccine__title title">перед вакцинацией</h2>
-						<div class="before-vaccine__slide__wrapper swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="before-vaccine-slide">
-										<div class="before-vaccine-slide__top">
-											<div class="before-vaccine-slide__title">Молекулярная диагностика (ПЦР)</div>
-											<div class="before-vaccine-slide__description">
-												Выявляет генетический материал вируса (РНК) в биологическом материале человека.
-												<br>
-												<br>
-												Полимеразная цепная реакция с транскрипцией в режиме реального времени (ОТ-ПЦР) Изотермическая амплификация (RT-LAMP).
-											</div>
-											<div class="before-vaccine-slide__tag">
-												Мазок из носа и ротоглотки
-											</div>
+				<section class="form-2">
+					<div class="main__wrapper form-2__wrapper">
+						<form class="form_registration" action="" method="post" id="registrationForm">
+							<ul class="form_registration__columns">
+								<li class="form_registration__column">
+									<fieldset class="contact-person">
+										<legend class="fieldset__title">Кто будет сдавать анализы?</legend>
+										<span class="empty-fields">Заполните все поля</span>
+										<ul class="contact-person_list">
+											<li class="contact-person_list__item">
+												<input type="text" class="rfield" name="second-name" id="secondName" placeholder="Фамилия пациента">
+												<label for="secondName" class="contact-person_list__label">Фамилия пациента</label>
+											</li>
+											<li class="contact-person_list__item">
+												<input type="text" class="rfield" name="name" id="name" placeholder="Имя пациента">
+												<label for="name" class="contact-person_list__label ">Имя пациента</label>
+											</li>
+											<li class="contact-person_list__item">
+												<input type="text" class="rfield" name="patronymic" id="patronymic" placeholder="Отчество пациента">
+												<label for="patronymic" class="contact-person_list__label ">Отчество пациента</label>
+											</li>
+											<li class="form_info__list__item form__birthdate">
+												<input type="text" class="birthdate-field rfield" name="birthdate" data-position="bottom right"  placeholder="Дата рождения" id="birthdate" autocomplete="off">
+											</li>
+											<li class="form_radio">
+												<input type="radio" class="rfield" name="sex" id="male">
+												<label for="male" >Мужчина</label>
+												<input type="radio" class="rfield" name="sex" id="female">
+												<label for="female">Женщина</label>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset class="contact-information">
+										<legend class="fieldset__title">Контакты для оповещения</legend>
+										<span class="empty-fields">Заполните все поля</span>
+										<ul class="contact-information__list">
+											<li><input type="tel" class="phone-field rfield" name="phone" id="phone" placeholder="+7-___-___-__-__" data-mask="+7 (___) ___-__-__"></li>
+											<li>
+												<input type="email" name="email" id="email" placeholder="Адрес электронной почты">
+												<label for="email" class="contact-information__list__label">Адрес электронной почты</label>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset class="contact-adress">
+										<legend class="fieldset__title">Адрес проживания пациента</legend>
+										<span class="empty-fields">Заполните все поля</span>
+										<ul class="contact-adress__list">
+											<li>
+												<input type="text" name="city" id="city" placeholder="Город, улица">
+												<label for="city" class="contact-adress__list__label">Город, улица</label>
+											</li>
+											<li>
+												<input type="text" name="house-number" id="houseNumber" placeholder="Дом">
+												<label for="houseNumber" class="contact-adress__list__label">Дом</label>
+											</li>
+											<li>
+												<input type="text" name="apartment" id="apartment" placeholder="Квартира">
+												<label for="apartment" class="contact-adress__list__label">Квартира</label>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset class="questions">
+										<span class="empty-fields">Заполните все поля</span>
+										<ul class="questions__list">
+											<li class="questions__list__item form_radio">
+												<span class="question">У пациента есть полис ОМС?</span>
+												<input type="radio" class="rfield" name="policy" id="policyTrue">
+												<label for="policyTrue">Да</label>
+												<input type="radio" class="rfield" name="policy" id="policyFalse">
+												<label for="policyFalse">Нет</label>
+											</li>
+											<li class="questions__list__item form_radio">
+												<span class="question">Пациент работает или учится?</span>
+												<input type="radio" class="rfield" name="employment" id="employmentTrue">
+												<label for="employmentTrue">Да</label>
+												<input type="radio" class="rfield" name="employment" id="employmentFalse">
+												<label for="employmentFalse">Нет</label>
+											</li>
+											<li class="questions__list__item form_radio">
+												<span class="question">Пациент был за границей в последние 14 дней?</span>
+												<input type="radio" class="rfield" name="move-out" id="moveOutTrue">
+												<label for="moveOutTrue">Да</label>
+												<input type="radio" class="rfield" name="move-out" id="moveOutFalse">
+												<label for="moveOutFalse">Нет</label>
+											</li>
+											<li class="questions__list__item form_radio">
+												<span class="question">Пациент вакцинировался от COVID-19 в текущем сезоне?</span>
+												<input type="radio" class="rfield" name="vaccination-covid" id="vaccinationCovidTrue">
+												<label for="vaccinationCovidTrue">Да</label>
+												<input type="radio" class="rfield" name="vaccination-covid" id="vaccinationCovidFalse">
+												<label for="vaccinationCovidFalse">Нет</label>
+											</li>
+											<li class="questions__list__item form_radio">
+												<span class="question">Пациент вакцинировался от гриппа в текущем сезоне?</span>
+												<input type="radio" class="rfield" name="vaccination-flu" id="vaccinationFluTrue">
+												<label for="vaccinationFluTrue"> Да</label>
+												<input type="radio" class="rfield" name="vaccination-flu" id="vaccinationFluFalse">
+												<label for="vaccinationFluFalse">Нет</label>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset class="special-conditions form_radio">
+										<legend class="fieldset__title">Особые условия</legend>
+										<input type="radio" onclick="clickRadio(this)" name="representative" id="representative">
+										<label for="representative">
+											Пациент придет с представителем 
+											<div class="special-conditions__description">?
+												<span class="special-conditions__description__text">Представитель — близкий человек (родственник или опекун), с письменного согласия которого допускается разглашение сведений, составляющих врачебную тайну, в целях медицинского обследования и лечения пациента</span>
+											</div>	
+										</label>
+										<input type="radio" onclick="clickRadio(this)" name="travel-abroad" id="travelAbroad">
+										<label for="travelAbroad">Выезжающим за границу</label>
+									</fieldset>
+									<fieldset class="representative-info" hidden>
+										<legend class="fieldset__title">Представитель пациента</legend>
+										<span class="empty-fields">Заполните все поля</span>
+										<ul class="representative-info__list">
+											<li>
+												<input type="text" class="representative-name" name="representative-name" id="representativeName" placeholder="ФИО представителя">
+												<label for="representativeName" class="representative-info__list__label">ФИО представителя</label>
+											</li>
+											<li>
+												<input type="text" class="representative-adress" name="representative-adress" id="representativeAdress" placeholder="Адрес представителя">
+												<label for="representativeAdress" class="representative-info__list__label">Адрес представителя</label>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset class="additional-questions form_radio">
+										<legend class="fieldset__title">Ответьте, пожалуйста, на вопросы</legend>
+										<span class="empty-fields">Заполните все поля</span>
+										<div>
+											<p class="additional-questions__description">
+											Вы контактировали за последние 14 дней с лицами, находившимися под наблюдением из-за вируса 2019-nCoV и заболевшими впоследствии?
+											</p>
+											<input type="radio" class="rfield" name="contact-observed"id="contactObservedTrue">
+											<label for="contactObservedTrue">Да</label>
+											<input type="radio" class="rfield" name="contact-observed" id="contactObservedFalse">
+											<label for="contactObservedFalse">Нет</label>
 										</div>
-										<div class="before-vaccine-slide__bottom">
-											<div class="before-vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="before-vaccine-slide__btn">Записаться онлайн</a>
+										<div>
+											<p class="additional-questions__description">
+											Вы контактировали за последние 14 дней с лицами с подтверждённым диагнозом 2019-nCoV?
+											</p>
+											<input type="radio" class="rfield" name="contact-confirmation" id="contactConfirmationTrue">
+											<label for="contactConfirmationTrue">Да</label>
+											<input type="radio" class="rfield" name="contact-confirmation" id="contactConfirmationFalse">
+											<label for="contactConfirmationFalse">Нет</label>
+										</div>
+										<div>
+											<p class="additional-questions__description">
+											Вы сейчас на карантине или на листе нетрудоспособности по ОРВИ или СOVID-19?
+											</p>
+											<input type="radio" class="rfield" name="quarantine" id="quarantineTrue">
+											<label for="quarantineTrue">Да</label>
+											<input type="radio" class="rfield" name="quarantine" id="quarantineFalse">
+											<label for="quarantineFalse">Нет</label>
+										</div>
+										<div>
+											<p class="additional-questions__description">
+											У вас были симптомы инфекции (температура 37.5 и выше, кашель, насморк) за последние 5 дней?
+											</p>
+											<input type="radio" class="rfield" name="symptoms-of-infection" id="symptomsOfInfectionTrue">
+											<label for="symptomsOfInfectionTrue">Да</label>
+											<input type="radio" class="rfield" name="symptoms-of-infection" id="symptomsOfInfectionFalse">
+											<label for="symptomsOfInfectionFalse">Нет</label>
+										</div>
+									</fieldset>
+									<button class="order-button-accept btn__submit" type="">Заполнить анкету</button>
+								</li>
+								<li class="form_registration__column">
+									<div class="order-info popup" >
+										<div class="order-info__wrapper">
+											<div class="order-info__content">
+												<fieldset class="order-info__fieldset" id="orderInfoResult">
+													<legend class="fieldset__title">Ваш заказ</legend>
+														<ul class="order-info__list">
+															<li>
+																<output class="cheked_analyse" name="cheked_analyse" id="chekedAnalyse"></output>
+															</li>
+															<li>
+																<label for="checkedDepartment">Aдрес отделения</label>
+																<output name="cheked-department" id="checkedDepartment">Калининград, ул Подп. Иванникова, 8</output>
+															</li>
+															<li>
+																<ul class="order-info_columns">
+																	<li class="order-info_column">
+																		<label>Дата посещения:</label>
+																		<output name="checked-visit-date" id="checkedVisitDate"></output>
+																	</li>
+																	<li class="order-info_column">
+																		<label>Время:</label>
+																		<output name="checked-visit-time" id="checkedVisitTime"></output>
+																	</li>
+																</ul>
+															</li>
+															<li>
+																<label class="order-info__price">К оплате</label>
+																<output name="">1400</output>
+																₽
+															</li>
+														</ul>
+														<p class="order-info__text">
+															Оформляя заказ вы принимаете условия Соглашения об обработке <a href="#">Персональных данных</a> и ознакомлены с <a href="#">Политикой конфидециальности</a>
+														</p>
+														<a href="" class="fas fa-times order-info__close-button close-button"></a>
+														<button class="order-info__submit popup-link" href="#orderAcceptedPopup" type="submit">Предзаказ без предоплаты</button>
+														<button class="order-info__submit btn__submit" type="submit">Предзаказ без предоплаты</button>
+												</fieldset>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="before-vaccine-slide">
-										<div class="before-vaccine-slide__top">
-											<div class="before-vaccine-slide__title">Анализ на вирусные антигены</div>
-											<div class="before-vaccine-slide__description">
-												Выявляет белки, входящие в состав вируса, которые распознаются иммунной системой.
-												<br>
-												<br>
-												Иммунохроматографический экспресс-тест.
-											</div>
-											<div class="before-vaccine-slide__tag">
-												Мазок из носа и ротоглотки
-											</div>
-										</div>
-										<div class="before-vaccine-slide__bottom">
-											<div class="before-vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="before-vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="before-vaccine-slide">
-										<div class="before-vaccine-slide__top">
-											<div class="before-vaccine-slide__title">Анализ на антитела (IgM и IgG)</div>
-											<div class="before-vaccine-slide__description">
-												Выявляет антитела к возбудителю инфекции, которые вырабатываются в организме человека в результате его контакта с вирусом.
-												<br>
-												<br>
-												Иммуноферментный анализ (АФА) Иммунохемилюминесцентный анализ (ИХЛА)
-											</div>
-											<div class="before-vaccine-slide__tag">
-												Кровь из вены
-											</div>
-										</div>
-										<div class="before-vaccine-slide__bottom">
-											<div class="before-vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="before-vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="before-vaccine-slide">
-										<div class="before-vaccine-slide__top">
-											<div class="before-vaccine-slide__title">Экспресс-анализ на антитела</div>
-											<div class="before-vaccine-slide__description">
-												Выявляет антитела к возбудителю инфекции - иммунные клетки, которые вырабатываются в организме человека в результате его контакты с вирусом.
-												<br>
-												<br>
-												Иммунохроматографический экспресс-тест
-											</div>
-											<div class="before-vaccine-slide__tag">
-												Кровь капиллярная/кровь из вены
-											</div>
-										</div>
-										<div class="before-vaccine-slide__bottom">
-											<div class="before-vaccine-slide__price">1400 ₽</div>
-											<a href="#" class="before-vaccine-slide__btn">Записаться онлайн</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="kt-test">
-					<div class="main__wrapper">
-						<div class="kt-test__wrapper">
-								<div class="kt-test__top">
-									<div class="kt-test__title"><span>пройдите</span>КТ легких</div>
-									<div class="kt-test__description">
-										Компьютерная томография (КТ) — это быстрый и высокоинформативный рентгеновский метод обследования. Изображение получается за счет разности поглощения тканями рентгеновских лучей. Чем плотнее ткань, тем больше она поглощает рентгеновских лучей и наоборот. КТ позволяет получить 3D реконструкцию.
-									</div>
-								</div>
-								<div class="kt-test__bottom">
-									<div class="kt-test__price">3500 ₽</div>
-									<a href="#" class="kt-test__btn">Записаться онлайн</a>
-								</div>
-						</div>
-					</div>
-				</section>
-				<section class="discount">
-					<div class="main__wrapper">
-						<div class="discount__wrapper">
-							<p class="title-description">если вы уже </p>
-							<h2 class="discount__title title">
-								у нас были
-							</h2>
-							<p class="discount-description">
-								Воспользуйтесь <span>скидкой 10%</span> на ПЦР исследование если вы уже сдавали тест в нашей лаборатории
-							</p>
-							<ul class="discount__about">
-								<li>10% <span>скидка на ПЦР</span></li>
-								<li>клиентам нашей клиники</li>
+								</li>
 							</ul>
-						</div>
+						</form>
 					</div>
 				</section>
-				<section class="about-company" id="about-company">
-					<div class="main__wrapper about-company__wrapper">
-						<div class="about-company__top">
-							<div class="about-company__title">Несколько слов о компании “Медэксперт”</div>
-							<div class="about-company_info">
-								<span>2</span> лет
-								<p>на рынке</p>
+				<section class="order-accepted">
+					<div class="main__wrapper order-accepted__wrapper">
+						<div class="order-accepted__content">
+							<div class="order-accepted__title title">
+								Ваш заказ отправлен!
 							</div>
-						</div>
-						<div class="about-company__description">
-							<p class="about_company__text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suspendisse urna blandit eleifend in ipsum, duis. Nullam sed lorem lobortis massa morbi diam viverra. Mauris urna viverra arcu, a viverra dignissim turpis sed. Nibh tortor, in scelerisque felis sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suspendisse urna blandit eleifend in ipsum, duis. Nullam sed lorem lobortis massa morbi diam viverra. Mauris urna viverra arcu, a viverra dignissim turpis sed. Nibh tortor, in scelerisque felis sed ullamcorper.
-							<br>
-							<br>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suspendisse urna blandit eleifend in ipsum, duis. Nullam sed lorem lobortis massa morbi diam viverra. Mauris urna viverra arcu, a viverra dignissim turpis sed. Nibh tortor, in scelerisque felis sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suspendisse urna blandit eleifend in ipsum
-							</p>
-						</div>
-					</div>
-				</section>
-				<section class="contacts" id="contacts">
-					<div class="main__wrapper contacts__wrapper">
-						<p class="title-description">контакты</p>
-						<h2 class="contacts__title title">Филиалы и адреса</h2>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Сельме <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Космической <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Иванникова <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Интернациональной <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Леонова <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Московском проспекте <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Советском проспекте <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на проспекте Победы <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Пражской <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на бульв. Ф.Лефорта <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="contact-departament">
-							<div class="contact__title">
-								Медэксперт на Тургенева <span></span>
-							</div>
-							<div class="map_ballon">
-								<div class="map__adress">
-									ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
-								</div>
-								<ul class="map__info">
-									<li>
-										<p class="map__phone">Телефон:</p>
-										<div class="map__phone">
-											<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
-											<div class="phone-icon">
-												<a href="viber://add?number=74012519000"><img src="../img/viber-icon.svg" width="29" height="29"></a>
-												<a href="https://wa.me/74012519000"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="map__worktime">Режим работы:</div>
-										<div class="map__week">
-											<span>Пн-Пт</span>
-											<span>Сб</span>
-											<span>Вс</span>
-										</div>
-										<div class="map__time">
-											<span>8:00 - 18:00</span>
-											<span>8:00 - 16:00</span>
-											<span>8:00 - 12:00</span>
-										</div>
-										<a href="#mapSmall" class="map__link popup-link">
-											Смотреть на карте
-										</a>
-									</li>
-								</ul>
+							<div class="order-accepted__text">
+								Детальная информация о заказе отправлена на электронную почту. Дополнительная запись не требуется. 
+								<span>Ждем вас в выбранном отделении!</span>
 							</div>
 						</div>
 					</div>
-					<div class="map-big" id="map"></div>
 				</section>
 			</main>
-			<footer class="footer">
+			<footer class="footer" id="footer">
 				<div class="main__wrapper footer__wrapper">
 					<div class="footer__top">
 						<div class="footer__logo">
 							<a href=""><img src="img/logo.svg" alt="МЕДЭКСПЕРТ"></a>
 						</div>
 						<ul class="footer__nav">
-							<li><a href="#type" class="footer__nav__link">Анализ на короновирус</a></li>
-							<li><a href="#features" class="footer__nav__link">Преимущества</a></li>
-							<li><a href="#before-vaccine" class="footer__nav__link">Обследование</a></li>
-							<li><a href="#about-company" class="footer__nav__link">О нас</a></li>
-							<li><a href="#contacts" class="footer__nav__link">Адреса</a></li>
+							<li><a href="index1.html#type" class="footer__nav__link">Анализ на короновирус</a></li>
+							<li><a href="index1.html#features" class="footer__nav__link">Преимущества</a></li>
+							<li><a href="index1.html#before-vaccine" class="footer__nav__link">Обследование</a></li>
+							<li><a href="index1.html#about-company" class="footer__nav__link">О нас</a></li>
+							<li><a href="index1.html#contacts" class="footer__nav__link">Адреса</a></li>
 						</ul>
 						<div class="footer__callback">
-							<a class="header__callback_number" href="tel:+74012519000">+7 (4012) 519-000</a>
+							<a class="footer__callback_number" href="tel:+74012519000">+7 (4012) 519-000</a>
 							<a class="footer__callback_description popup-link" href="#callbackPopup">обратный звонок</a>
 						</div>
 					</div>
 					<div class="footer__bottom">
 						<div class="copyright">
-							© ООО “Медэксперт” Все права защищены  2021
+							© ООО “Медэксперт” <span>Все права защищены  2021</span>
 						</div>
 						<div class="privacy-policy">
 							<a class="privacy-policy__link" href="#">Политика конфидециальности</a>
@@ -833,27 +455,48 @@
 					</div>
 				</div>
 			</div>
-			<div class="map-small popup" id="mapSmall">
-				<div class="map-small_wrapper">
-					<div class="map-small-content popup-content">
-						<div class="map-small__description">
-							ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
+			<div class="refusal popup" id="refusalPopup">
+				<div class="refusal_wrapper">
+					<div class="refusal-content popup-content">
+						<div class="refusal__title">
+							Мы вынуждены отказать Вам в оказании услуги
 						</div>
-						<div class="map-Selma" id="mapSelma"></div>
-						<a href="" class="fas fa-times map-small__close-button close-button"></a>
+						<div class="refusal__text">
+							<p>
+								Для предупреждения распространения коронавирусной инфекции в медицинских офисах Медэксперт не оказывается услуга лабораторного исследования по выявлению РНК коронавируса SARS-CoV-2 в соскобе эпителиальных клеток носоглотки и ротоглотки и по выявлению антител к SARS-CoV-2 для лиц, подлежащих обязательному обследованию на COVID-19. Мы вынуждены отказать вам в оказании услуги!
+							</p>
+							<p>
+								Беременные женщины входят в группу риска по COVID-19. Вам рекомендуется ограничить посещение медицинских организаций
+							</p>
+						</div>
+						<button class="refusal__accept close-button">Понятно</button>
+						<a href="" class="fas fa-times refusal__close-button close-button"></a>
+					</div>
+				</div>
+			</div>
+			<div class="order-accepted popup" id="orderAcceptedPopup">
+				<div class="main__wrapper order-accepted__wrapper">
+					<div class="order-accepted__content popup-content">
+						<div class="order-accepted__title title">
+							Ваш заказ отправлен!
+						</div>
+						<div class="order-accepted__text">
+							Детальная информация о заказе отправлена на электронную почту. Дополнительная запись не требуется. 
+							<span>Ждем вас в выбранном отделении!</span>
+						</div>
+						<a href="index1.html" class="fas fa-times order-accepted__close-button close-button"></a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<a class="back_to_top" title="Наверх">Наверх</a>
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
-		<script defer src="js/datepicker.min.js"></script>
-		<script defer src="js/script.js"></script>
-		<script defer src="js/script2.js"></script>
-		<script src="https://kit.fontawesome.com/7cc80fa816.js" crossorigin="anonymous"></script>
-		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=556c253c-cbc8-4cac-bc8b-0d19259a3a3d"></script>
+		<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+		<script src="js/jquery.mCustomScrollbar.js"></script>
+		<script src="js/datepicker.min.js"></script>
+		<script src="js/script2.js"></script>
+		<script src="js/script.js"></script>
 		<script src="https://kit.fontawesome.com/7cc80fa816.js" crossorigin="anonymous"></script>
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=556c253c-cbc8-4cac-bc8b-0d19259a3a3d"></script>
 	</body>
