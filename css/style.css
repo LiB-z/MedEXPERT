@@ -18,6 +18,10 @@ html, body {
   color: #3D5A6A;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
