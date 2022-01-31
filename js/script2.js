@@ -110,6 +110,7 @@ function regOpen() {
 			e.preventDefault ();
 
 			$('.form-1').css({'display':'none'});
+			$('.datetime-select ').removeClass('open');
 			$('.registration_info, .form-2').css({'display':'block'});
 			window.scrollTo(0, 0);
 		});
