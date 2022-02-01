@@ -1,3 +1,97 @@
+//-------------------------------------------------------------------------------------
+//------------------------------------МОДАПЫ-------------------------------------------
+//-------------------------------------------------------------------------------------
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelector(".lock-padding");
+
+let unlock = true;
+const timeout = 800;
+
+if (popupLinks.length > 0) {
+	for (let i = 0; i < popupLinks.length; i++) {
+		const popupLink = popupLinks[i];
+		popupLink.addEventListener("click", function(e) {
+			const popupName = popupLink.getAttribute('href').replace('#','');
+			const currentPopup = document.getElementById(popupName);
+			popupOpen(currentPopup);
+			e.preventDefault();
+		});
+	}
+}
+const popupCloseButton = document.querySelectorAll('.close-button');
+if (popupCloseButton.length > 0) {
+	for (let i = 0; i < popupCloseButton.length; i++) {
+		const cl = popupCloseButton[i];
+		cl.addEventListener('click', function (e) {
+			popupClose(cl.closest('.popup'));
+			e.preventDefault();
+		});
+	}
+}
+function popupOpen (currentPopup) {
+	if  (currentPopup && unlock) {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		} else {
+			bodyLock();
+		}
+		currentPopup.classList.add('open');
+		currentPopup.addEventListener("click", function(e) {
+			if (!e.target.closest('.popup-content')) {
+				popupClose(e.target.closest('.popup'));
+			}
+		});
+	}
+}
+function popupClose (popupActive, doUnlock = true) {
+	if (unlock) {
+		popupActive.classList.remove('open');
+		if (doUnlock) {
+			bodyUnLock();
+		}
+	}
+}
+function bodyLock() {
+	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+	for (let i=0; i < lockPadding.length; i++ ) {
+		const el = lockPadding[i];
+		el.style.paddingRight = lockPaddingValue;
+	}
+	body.style.paddingRight = lockPaddingValue;
+	body.classList.add('lock');
+
+	unlock = false;
+	setTimeout(function() {
+		unlock = true;
+	}, timeout);
+};
+function bodyUnLock() {
+	setTimeout(function () {
+		for (let i = 0; i < lockPadding.length; i++) {
+			const el = lockPadding[i];
+			el.style.paddingRight = '0px';
+		}
+		body.style.paddingRight = '0px';
+		body.classList.remove('lock');
+	}, timeout);
+
+	unlock = false;
+	setTimeout(function() {
+		unlock = true;
+	}, timeout);
+}
+//-------------------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+//---------------------------------             ---------------------------------------
+//---------------------------------    JQUERY    --------------------------------------
+//---------------------------------             ---------------------------------------
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+
 //-----------------------------------------------------------------------------------
 //--------------------------------------ПРОВЕРКА ФОРМЫ-------------------------------
 //-----------------------------------------------------------------------------------
@@ -240,7 +334,7 @@ $(window).scroll(() => {
 setInterval(function(){
 		if($(document).find('.popup').hasClass("open") || $(document).find('.header-menu').hasClass("active") && !$('body').hasClass('lock')) {
 			$('body').addClass('lock');
-		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu').hasClass("open")) {
+		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu').hasClass("active")) {
 			$('body').removeClass('lock');
 		}
 	},200);
@@ -408,7 +502,6 @@ $(document).ready(function() {
 //-------------------------------------------------------------------------------------
 $(function() {
 	$(document).scroll(function() {
-		console.log("nyaaa")
 			var scrollSize = $(document).scrollTop();
 			var scrollArea = $(window).innerHeight();
 
