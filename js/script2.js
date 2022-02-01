@@ -332,9 +332,9 @@ $(window).scroll(() => {
 
 //проверка фиксации body
 setInterval(function(){
-		if($(document).find('.popup').hasClass("open") || $(document).find('.header-menu').hasClass("active") && !$('body').hasClass('lock')) {
+		if($(document).find('.popup').hasClass("open") || $(document).find('.header-menu__content').hasClass("active") && !$('body').hasClass('lock')) {
 			$('body').addClass('lock');
-		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu').hasClass("active")) {
+		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu__content').hasClass("active")) {
 			$('body').removeClass('lock');
 		}
 	},200);
