@@ -91,7 +91,14 @@ function bodyUnLock() {
 //---------------------------------             ---------------------------------------
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
-
+//проверка фиксации body
+setInterval(function(){
+		if($(document).find('.popup').hasClass("open") || $(document).find('.header-menu__content').hasClass("active") && !$('body').hasClass('lock')) {
+			$('body').addClass('lock');
+		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu__content').hasClass("active")) {
+			$('body').removeClass('lock');
+		}
+	},200);
 //-----------------------------------------------------------------------------------
 //--------------------------------------ПРОВЕРКА ФОРМЫ-------------------------------
 //-----------------------------------------------------------------------------------
@@ -329,15 +336,10 @@ $(window).scroll(() => {
 		$('#orderInfoResult').css('margin-bottom', 0);
 	}
 });
-
-//проверка фиксации body
-setInterval(function(){
-		if($(document).find('.popup').hasClass("open") || $(document).find('.header-menu__content').hasClass("active") && !$('body').hasClass('lock')) {
-			$('body').addClass('lock');
-		} else if (!$(document).find('.popup').hasClass("open") && !$(document).find('.header-menu__content').hasClass("active")) {
-			$('body').removeClass('lock');
-		}
-	},200);
+//---Всплывашка "Представитель"
+$('.special-conditions__icon').hover(function() {
+	$('.special-conditions__description__text').toggleClass('active');
+});
 //--------------------------------------------------------------------------------------
 //----------------------------------------МОДАП ОТКАЗ ----------------------------------
 //--------------------------------------------------------------------------------------

@@ -141,7 +141,7 @@
 												<p class="datetime_-title">Запись на прием:</p><p class="datetime-out"></p>
 											</div> 
 											<button class="datetime__btn-submit btn__submit datetime-popup__btn-submit">Подтвердить и заполнить анкету <i class="material-icons">trending_flat</i></button>
-											<a href="" class="fas fa-times visitTime__close-button close-button"></a>
+											<a class="visitTime__close-button close-button"></a>
 									</div>
 								</div>
 						</form>
@@ -261,12 +261,13 @@
 									<fieldset class="special-conditions form_radio">
 										<legend class="fieldset__title">Особые условия</legend>
 										<input type="radio" onclick="clickRadio(this)" name="representative" id="representative">
-										<label for="representative">
+										<label class="representative" for="representative">
 											Пациент придет с представителем 
-											<div class="special-conditions__description">?
-												<span class="special-conditions__description__text">Представитель — близкий человек (родственник или опекун), с письменного согласия которого допускается разглашение сведений, составляющих врачебную тайну, в целях медицинского обследования и лечения пациента</span>
-											</div>	
 										</label>
+										<div class="special-conditions__description">
+												<div class="special-conditions__icon">?</div>
+												<span class="special-conditions__description__text">Представитель — близкий человек (родственник или опекун), с письменного согласия которого допускается разглашение сведений, составляющих врачебную тайну, в целях медицинского обследования и лечения пациента</span>
+										</div>
 										<input type="radio" onclick="clickRadio(this)" name="travel-abroad" id="travelAbroad">
 										<label for="travelAbroad">Выезжающим за границу</label>
 									</fieldset>
@@ -361,10 +362,10 @@
 														<p class="order-info__text">
 															Оформляя заказ вы принимаете условия Соглашения об обработке <a href="#">Персональных данных</a> и ознакомлены с <a href="#">Политикой конфидециальности</a>
 														</p>
-														<a href="" class="fas fa-times order-info__close-button close-button"></a>
 														<button class="order-info__submit popup-link" href="#orderAcceptedPopup" type="submit">Предзаказ без предоплаты</button>
 														<button class="order-info__submit btn__submit" type="submit">Предзаказ без предоплаты</button>
 												</fieldset>
+												<a class="order-info__close-button close-button"></a>
 											</div>
 										</div>
 									</div>
@@ -440,7 +441,7 @@
 								<div class="info container"></div>
 								<button class="callback__submit popup-link" href="#callbackPopupAccepted" type="submit">Отправить</button>
 							</form>
-							<a href="" class="fas fa-times callback__close-button close-button"></a>
+							<a class="callback__close-button close-button"></a>
 					</div>
 				</div>
 			</div>
@@ -451,7 +452,7 @@
 							Спасибо!<br>Ваша заявка отправлена.
 							<span>Мы свяжемся с Вами в ближайшее время!</span>
 						</div>
-						<a href="" class="fas fa-times callback__close-button close-button"></a>
+						<a class="callback__close-button close-button"></a>
 					</div>
 				</div>
 			</div>
@@ -470,7 +471,7 @@
 							</p>
 						</div>
 						<button class="refusal__accept close-button">Понятно</button>
-						<a href="" class="fas fa-times refusal__close-button close-button"></a>
+						<a href="" class="refusal__close-button close-button"></a>
 					</div>
 				</div>
 			</div>
@@ -484,7 +485,7 @@
 							Детальная информация о заказе отправлена на электронную почту. Дополнительная запись не требуется. 
 							<span>Ждем вас в выбранном отделении!</span>
 						</div>
-						<a href="index.html" class="fas fa-times order-accepted__close-button close-button"></a>
+						<a href="index.html" class="order-accepted__close-button close-button"></a>
 					</div>
 				</div>
 			</div>
