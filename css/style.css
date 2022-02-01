@@ -306,7 +306,7 @@ a.close-button::after {
 
   .header-menu__content {
     position: fixed;
-    top: 3.42rem;
+    top: 3.3rem;
     opacity: 0;
     visibility: hidden;
     right: 0;
