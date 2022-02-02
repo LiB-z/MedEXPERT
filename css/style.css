@@ -84,6 +84,22 @@ main {
   visibility: visible;
 }
 
+body .btn-dark:hover {
+  background: #006f7f;
+  color: #e5e5e5;
+}
+body .btn-dark:active {
+  background: #338c99;
+  color: #f2f2f2;
+}
+
+body .btn-light:hover {
+  color: rgba(0, 124, 142, 0.6);
+}
+body .btn-light:active {
+  background: rgba(220, 224, 225, 0.8);
+}
+
 a.close-button {
   position: absolute;
   width: 1.4125rem;
@@ -183,6 +199,13 @@ a.close-button::after {
 .header__nav__link:visited, .footer__nav__link:visited {
   color: #0E3449;
 }
+.header__nav__link:hover, .footer__nav__link:hover {
+  color: #05141d;
+  font-weight: 300;
+}
+.header__nav__link:active, .footer__nav__link:active {
+  color: rgba(14, 52, 73, 0.7);
+}
 
 .header__callback_number, .footer__callback_number {
   margin: 0;
@@ -191,6 +214,9 @@ a.close-button::after {
   font-weight: 600;
   color: #0E3449;
   text-decoration: none;
+}
+.header__callback_number:active, .footer__callback_number:active {
+  color: rgba(14, 52, 73, 0.7);
 }
 
 .header__callback_description, .footer__callback_description {
@@ -201,6 +227,9 @@ a.close-button::after {
   font-weight: 400;
   color: #007C8E;
   text-decoration: none;
+}
+.header__callback_description:active, .footer__callback_description:active {
+  color: rgba(0, 124, 142, 0.7);
 }
 
 .footer__bottom {
@@ -236,6 +265,10 @@ a.close-button::after {
 }
 .privacy-policy__link:visited {
   color: #2B2A29;
+}
+.privacy-policy__link:active {
+  color: rgba(43, 42, 41, 0.7);
+  border-bottom: 1px solid rgba(43, 42, 41, 0.7);
 }
 
 .made-by {
@@ -2108,6 +2141,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
   transition: all 0.4s ease 0s;
 }
 
+.order-info__close-button.close-button {
+  display: none;
+}
+
+.order-info.popup.open .order-info__close-button.close-button {
+  display: block;
+}
+
 @media (max-width: 1200px) {
   .registration__wrapper {
     padding-top: 5.625rem;
@@ -2510,7 +2551,17 @@ input[type=date]::-webkit-calendar-picker-indicator {
     margin-top: auto;
     border-radius: 0 0 10px 10px;
   }
+
+  .additional-questions .empty-fields {
+    top: 2rem;
+  }
 }
+@media (max-width: 325px) {
+  .additional-questions .empty-fields {
+    top: 4rem;
+  }
+}
+
 @media (max-width: 750px) {
   .order-accepted__content {
     padding: 2.687rem 1.1rem;
@@ -2695,6 +2746,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
   top: 1rem;
   right: 0;
 }
+.tests-link:hover {
+  color: #006f7f;
+}
+.tests-link:active {
+  color: #338c99;
+}
 
 .kt-test {
   background: url(../img/kt-test-background.png) no-repeat;
@@ -2761,6 +2818,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
   text-decoration: none;
   color: #007C8E;
   font-weight: 600;
+}
+.kt-test__btn:hover {
+  background: #fafafa;
+  color: #338c99;
+}
+.kt-test__btn:active {
+  background: #ededed;
+  color: #007C8E;
 }
 
 .quote_block {
@@ -3021,6 +3086,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
   color: #007C8E;
   font-weight: 600;
 }
+.vaccine-slide__btn:hover, .before-vaccine-slide__btn:hover {
+  color: rgba(0, 124, 142, 0.6);
+}
+.vaccine-slide__btn:active, .before-vaccine-slide__btn:active {
+  background: rgba(220, 224, 225, 0.8);
+}
 
 .slide__active .vaccine-slide {
   -webkit-box-shadow: 10px 10px 60px rgba(5, 75, 75, 0.15);
@@ -3049,6 +3120,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
+}
+.slide__active .vaccine-slide__btn:hover, .slide__active .before-vaccine-slide__btn:hover {
+  background: #006f7f;
+  color: #e5e5e5;
+}
+.slide__active .vaccine-slide__btn:active, .slide__active .before-vaccine-slide__btn:active {
+  background: #338c99;
+  color: #f2f2f2;
 }
 
 .discount {
@@ -3503,17 +3582,24 @@ input[type=date]::-webkit-calendar-picker-indicator {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.callback__accepted {
+  opacity: 1;
+  visibility: visible;
+  display: none;
+  -webkit-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+}
+
+.callback__accepted.popup.open {
+  display: block;
 }
 
 .map-small {
   background: none;
-}
-
-#callbackPopupAccepted {
-  -webkit-transition: all 0.1s ease 0s;
-  transition: all 0.1s ease 0s;
 }
 
 .callback-content {
@@ -3775,6 +3861,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     background-position: -58px 6px;
     top: 1.1rem;
     right: 1.2rem;
+  }
+  .tests-link:hover {
+    background: #006f7f;
+    color: #e5e5e5;
+  }
+  .tests-link:active {
+    background: #338c99;
+    color: #f2f2f2;
   }
 
   .quote_block__text {
