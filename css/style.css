@@ -117,7 +117,8 @@ a.close-button::before {
   border-radius: 2px;
   background-color: #3D5A6A;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
 }
 a.close-button::after {
   content: "";
@@ -129,7 +130,8 @@ a.close-button::after {
   border-radius: 2px;
   background-color: #3D5A6A;
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
 }
 
 .back_to_top {
@@ -298,6 +300,7 @@ a.close-button::after {
     width: 100%;
     height: 0.125rem;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
   .header-menu__burger::before {
@@ -314,22 +317,26 @@ a.close-button::after {
     height: 0.125rem;
     top: 0.55rem;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 
   .header-menu__burger.active::before {
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
     top: 0.563rem;
   }
   .header-menu__burger.active::after {
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
     bottom: 0.563rem;
   }
   .header-menu__burger.active span {
     -webkit-transform: scale(0);
-            transform: scale(0);
+            -ms-transform: scale(0);
+        transform: scale(0);
   }
 
   .footer {
@@ -356,6 +363,7 @@ a.close-button::after {
     z-index: 2;
     display: block;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 
@@ -512,6 +520,7 @@ a.close-button::after {
     z-index: 2;
     display: block;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 
@@ -647,6 +656,7 @@ a.close-button::after {
     width: 100%;
     height: 0.125rem;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
   .header-menu__burger::before {
@@ -663,22 +673,26 @@ a.close-button::after {
     height: 0.125rem;
     top: 0.55rem;
     -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 
   .header-menu__burger.active::before {
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
     top: 0.563rem;
   }
   .header-menu__burger.active::after {
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
     bottom: 0.563rem;
   }
   .header-menu__burger.active span {
     -webkit-transform: scale(0);
-            transform: scale(0);
+            -ms-transform: scale(0);
+        transform: scale(0);
   }
 }
 .registration_info, .form-2 {
@@ -699,6 +713,7 @@ a.close-button::after {
 
 .form_datetime {
   width: 100%;
+  background: -o-linear-gradient(293.72deg, #F3F9FB 15.26%, #F5F9FA 98.16%);
   background: linear-gradient(156.28deg, #F3F9FB 15.26%, #F5F9FA 98.16%);
   border-radius: 30px;
   padding: 3.75rem 6.25rem;
@@ -744,6 +759,7 @@ a.close-button::after {
   min-width: 10rem;
   width: 100%;
   -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .datetime__list .datetime__item select .select-placeholder {
@@ -881,6 +897,7 @@ a.close-button::after {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 .visitTime__wrapper .material-icons.active {
@@ -899,6 +916,7 @@ a.close-button::after {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 .visitTime__list.active {
@@ -960,6 +978,7 @@ a.close-button::after {
           align-items: center;
   margin-right: 11.625rem;
   -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 .datetime__btn-submit .material-icons {
@@ -1324,6 +1343,7 @@ a.close-button::after {
   min-width: 10rem;
   width: 100%;
   -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .form_registration input[type=date], .form_registration input[type=text] {
@@ -1358,6 +1378,7 @@ a.close-button::after {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
@@ -1655,6 +1676,7 @@ a.close-button::after {
   color: #fff;
   padding: 1.125rem 2.1875rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .order-button-accept {
@@ -1678,6 +1700,7 @@ a.close-button::after {
           align-items: center;
   padding: 1.8rem 1rem;
   -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
 
@@ -1695,6 +1718,7 @@ a.close-button::after {
   background-color: #F5F9FA;
   color: #75BEC9;
   -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   cursor: auto;
 }
@@ -1785,10 +1809,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
   pointer-events: none;
   border: 1px solid transparent;
   -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+      transform-origin: 0 0;
   color: #889197;
   -webkit-transition: opacity 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: opacity 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
   transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
   transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
@@ -1828,12 +1854,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:focus ~ .contact-person_list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-person_list li input[type=text]:focus ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .representative-info__list li input[type=text]:focus ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:focus ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-information__list li input[type=text]:focus ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
-          transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label {
   opacity: 0.65;
@@ -1841,12 +1869,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:focus ~ .representative-info__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:focus ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:focus ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:focus ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:focus ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
-          transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label {
   opacity: 0.65;
@@ -1854,12 +1884,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:focus ~ .contact-adress__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:focus ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:focus ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
-          transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label {
   opacity: 0.65;
@@ -1867,12 +1899,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .callback__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=email]:focus ~ .contact-information__list__label, .callback__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:focus ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:focus ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:focus ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:focus ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
-          transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label {
   opacity: 0.65;
@@ -1880,12 +1914,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list li input[type=text]:focus ~ .callback__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:focus ~ .callback__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:focus ~ .callback__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:focus ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:focus ~ .callback__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
-          transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
 .callback__list .form_radio label, .contact-person_list .form_radio label, .representative-info__list .form_radio label, .contact-adress__list .form_radio label, .contact-information__list .form_radio label {
   pointer-events: auto;
@@ -1998,6 +2034,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 
@@ -2008,6 +2045,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .refusal-content {
   width: 35.625rem;
+  background: -o-linear-gradient(280.1deg, #FBFEFF 22.02%, #DFEFF3 107.33%);
   background: linear-gradient(169.9deg, #FBFEFF 22.02%, #DFEFF3 107.33%);
   border-radius: 10px;
   padding: 3.125rem 2.938rem 3.75rem 3.125rem;
@@ -2138,6 +2176,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
@@ -2200,6 +2239,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
     position: fixed;
     top: 25%;
@@ -2220,6 +2260,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
             align-items: center;
     padding: 0;
     -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
   }
 
@@ -2277,6 +2318,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     background-color: #F5F9FA;
     color: #75BEC9;
     -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
     cursor: auto;
   }
@@ -2451,6 +2493,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     background-color: #F5F9FA;
     color: #75BEC9;
     -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
     cursor: auto;
   }
@@ -2468,6 +2511,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
     position: fixed;
     top: 0;
@@ -2488,6 +2532,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
             align-items: center;
     padding: 0;
     -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
   }
 
@@ -3477,6 +3522,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
@@ -3557,8 +3603,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
   width: 0.625rem;
   background-color: #007C8E;
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
   -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
@@ -3567,8 +3615,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .contact-departament.active .contact__title span::after {
   -webkit-transform: scale(0);
-          transform: scale(0);
+          -ms-transform: scale(0);
+      transform: scale(0);
   -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
@@ -3583,6 +3633,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   visibility: hidden;
   pointer-events: none;
   -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
@@ -3591,6 +3642,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   visibility: visible;
   display: none;
   -webkit-transition: all 0.1s ease 0s;
+  -o-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
 }
 
@@ -3624,6 +3676,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
           align-items: center;
   padding: 1.8rem 1rem;
   -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
 
@@ -3712,6 +3765,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .callback__submit {
   background-color: #007C8E;
   color: #fff;
+  text-decoration: none;
+  text-decoration: none;
   border-radius: 30px;
   border: none;
   font-family: Jost;
@@ -3839,6 +3894,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     top: 0;
     left: 0;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(6%, #F5F9FA), color-stop(10%, rgba(230, 244, 249, 0)));
+    background: -o-linear-gradient(top, #F5F9FA 6%, rgba(230, 244, 249, 0) 10%);
     background: linear-gradient(180deg, #F5F9FA 6%, rgba(230, 244, 249, 0) 10%);
   }
 
@@ -3958,6 +4014,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     top: 0;
     left: 0;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #E6F4F9), color-stop(30%, rgba(230, 244, 249, 0)));
+    background: -o-linear-gradient(top, #E6F4F9 20%, rgba(230, 244, 249, 0) 30%);
     background: linear-gradient(180deg, #E6F4F9 20%, rgba(230, 244, 249, 0) 30%);
   }
 
