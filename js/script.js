@@ -150,31 +150,31 @@ function lightEmpty(){
 		}
 		if ($('#policyTrue').prop("checked") == false && $('#policyFalse').prop("checked") == false) {
 			form.find('input[name="policy"]').next('label').addClass('radio-empty');
-      }
-      if ($('#employmentTrue').prop("checked") == false && $('#employmentFalse').prop("checked") == false) {
-      	form.find('input[name="employment"]').next('label').addClass('radio-empty');
-      }
-      if ($('#moveOutTrue').prop("checked") == false && $('#moveOutFalse').prop("checked") == false) {
-      	form.find('input[name="move-out"]').next('label').addClass('radio-empty');
-      }
-      if ($('#vaccinationCovidTrue').prop("checked") == false && $('#vaccinationCovidFalse').prop("checked") == false) {
-      	form.find('input[name="vaccination-covid"]').next('label').addClass('radio-empty');
-      }
-      if ($('#vaccinationFluTrue').prop("checked") == false && $('#vaccinationFluFalse').prop("checked") == false) {
-      	form.find('input[name="vaccination-flu"]').next('label').addClass('radio-empty');
-      }
-      if ($('#contactObservedTrue').prop("checked") == false && $('#contactObservedFalse').prop("checked") == false) {
-      	form.find('input[name="contact-observed"]').next('label').addClass('radio-empty');
-      }
-      if ($('#contactConfirmationTrue').prop("checked") == false && $('#contactConfirmationFalse').prop("checked") == false) {
-      	form.find('input[name="contact-confirmation"]').next('label').addClass('radio-empty');
-      }
-      if ($('#quarantineTrue').prop("checked") == false && $('#quarantineFalse').prop("checked") == false) {
-      	form.find('input[name="quarantine"]').next('label').addClass('radio-empty');
-      }
-      if ($('#symptomsOfInfectionTrue').prop("checked") == false && $('#symptomsOfInfectionFalse').prop("checked") == false) {
-      	form.find('input[name="symptoms-of-infection"]').next('label').addClass('radio-empty');
-      }
+		}
+		if ($('#employmentTrue').prop("checked") == false && $('#employmentFalse').prop("checked") == false) {
+			form.find('input[name="employment"]').next('label').addClass('radio-empty');
+		}
+		if ($('#moveOutTrue').prop("checked") == false && $('#moveOutFalse').prop("checked") == false) {
+			form.find('input[name="move-out"]').next('label').addClass('radio-empty');
+		}
+		if ($('#vaccinationCovidTrue').prop("checked") == false && $('#vaccinationCovidFalse').prop("checked") == false) {
+			form.find('input[name="vaccination-covid"]').next('label').addClass('radio-empty');
+		}
+		if ($('#vaccinationFluTrue').prop("checked") == false && $('#vaccinationFluFalse').prop("checked") == false) {
+			form.find('input[name="vaccination-flu"]').next('label').addClass('radio-empty');
+		}
+		if ($('#contactObservedTrue').prop("checked") == false && $('#contactObservedFalse').prop("checked") == false) {
+			form.find('input[name="contact-observed"]').next('label').addClass('radio-empty');
+		}
+		if ($('#contactConfirmationTrue').prop("checked") == false && $('#contactConfirmationFalse').prop("checked") == false) {
+			form.find('input[name="contact-confirmation"]').next('label').addClass('radio-empty');
+		}
+		if ($('#quarantineTrue').prop("checked") == false && $('#quarantineFalse').prop("checked") == false) {
+			form.find('input[name="quarantine"]').next('label').addClass('radio-empty');
+		}
+		if ($('#symptomsOfInfectionTrue').prop("checked") == false && $('#symptomsOfInfectionFalse').prop("checked") == false) {
+			form.find('input[name="symptoms-of-infection"]').next('label').addClass('radio-empty');
+		}
       // Таймаут подсветки полей
       setTimeout(function(){
       form.find('.empty_field').removeAttr('style');
@@ -291,10 +291,10 @@ $('order-accepted__close-button').click(function() {
 $(function() {
 	$("input[name='representative']").click(function() {
 		if ($("#representative").is(":checked")) {
-		$(".representative-info").show();
-		$('.representative-name, .representative-adress').toggleClass('rfield');
+		$(".representative-info-block").show();
+		$('.representative-fullname, .representative-adress').toggleClass('rfield');
 		} else {
-		$(".representative-info").hide();
+		$(".representative-info-block").hide();
 		$('.representative-name, .representative-adress').toggleClass('rfield');
 		$('.representative-name, .representative-adress').toggleClass('empty_field');
 		}
@@ -457,7 +457,8 @@ $visitdate.datepicker({
 				$('#visitTime').val("");
 				$('.datetime-select.popup').find('.visitTime__item.selected').removeClass('selected')
 				$('.datetime-select.popup').addClass('open');
-				$('.datetime-select__text').text($('#visitTimeTitle').text());
+				$('.datetime-select__text').text($('.datetime-select__text').text() + ":");
+				$('.datetime-select__date').text($('#visitTimeTitle').text().replace("Выберите время:",""));
 			} 
 		} else {
 			$(".time-icon").addClass('active');

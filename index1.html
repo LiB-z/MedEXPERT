@@ -114,6 +114,7 @@
 										<div class="datetime-select__content">
 											<div class="datetime-select-title">
 												<p class="datetime-select__text">Выберите время</p>
+												<p class="datetime-select__date"></p>
 											</div>
 											<div class="visitTime__wrapper">
 												<ul class="visitTime__list">
@@ -271,20 +272,44 @@
 										<input type="radio" onclick="clickRadio(this)" name="travel-abroad" id="travelAbroad">
 										<label for="travelAbroad">Выезжающим за границу</label>
 									</fieldset>
-									<fieldset class="representative-info" hidden>
-										<legend class="fieldset__title">Представитель пациента</legend>
-										<span class="empty-fields">Заполните все поля</span>
-										<ul class="representative-info__list">
-											<li>
-												<input type="text" class="representative-name" name="representative-name" id="representativeName" placeholder="ФИО представителя">
-												<label for="representativeName" class="representative-info__list__label">ФИО представителя</label>
-											</li>
-											<li>
-												<input type="text" class="representative-adress" name="representative-adress" id="representativeAdress" placeholder="Адрес представителя">
-												<label for="representativeAdress" class="representative-info__list__label">Адрес представителя</label>
-											</li>
-										</ul>
-									</fieldset>
+									<div class="representative-info-block" hidden>
+										<fieldset class="representative-info">
+											<legend class="fieldset__title">Представитель пациента</legend>
+											<span class="empty-fields">Заполните все поля</span>
+											<ul class="representative-info__list">
+												<li>
+													<input type="text" class="representative-fullname" name="representative-lastname" id="representativeLastName" placeholder="Фамилия представителя">
+													<label for="representativeName" class="representative-info__list__label">Фамилия представителя</label>
+												</li>
+												<li>
+													<input type="text" class="representative-fullname" name="representative-Name" id="representativeName" placeholder="Имя представителя">
+													<label for="representativeName" class="representative-info__list__label">Имя представителя</label>
+												</li>
+												<li>
+													<input type="text" class="representative-fullname" name="representative-patronymic" id="representativePatronymic" placeholder="Отчество представителя">
+													<label for="representativeName" class="representative-info__list__label">Отчество представителя</label>
+												</li>
+											</ul>
+										</fieldset>
+										<fieldset class="representative-adress">
+											<legend class="fieldset__title">Адрес проживания представителя</legend>
+											<span class="empty-fields">Заполните все поля</span>
+											<ul class="representative-adress__list contact-adress__list">
+												<li>
+													<input type="text" name="representative_city" class="representative-adress" id="representativeСity" placeholder="Город, улица">
+													<label for="representativeСity" class="contact-adress__list__label">Город, улица</label>
+												</li>
+												<li>
+													<input type="text" name="representative-house-number" class="representative-adress" id="representativeHouseNumber" placeholder="Дом">
+													<label for="representativeHouseNumber" class="contact-adress__list__label">Дом</label>
+												</li>
+												<li>
+													<input type="text" name="representativeApartment" class="representative-adress" id="representativeApartment" placeholder="Квартира">
+													<label for="representativeApartment" class="contact-adress__list__label">Квартира</label>
+												</li>
+											</ul>
+										</fieldset>
+									</div>
 									<fieldset class="additional-questions form_radio">
 										<legend class="fieldset__title">Ответьте, пожалуйста, на вопросы</legend>
 										<span class="empty-fields">Заполните все поля</span>

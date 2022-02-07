@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="http://site.kz/css/reset.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+		<title>Тесты на COVID-19</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header lock-padding">
+				<div class="main__wrapper header__wrapper">
+					<div class="header-menu">
+						<div class="header__logo">
+							<a href="index.html"><img src="img/logo.svg" alt="МЕДЭКСПЕРТ"></a>
+						</div>
+						<div class="header-menu__burger">
+							<span></span>
+						</div>
+						<div class="header-menu__content">
+							<ul class="header__nav">
+								<li><a href="#type" class="header__nav__link">Анализ на короновирус</a></li>
+								<li><a href="#features" class="header__nav__link">Преимущества</a></li>
+								<li><a href="#before-vaccine" class="header__nav__link">Обследование</a></li>
+								<li><a href="#about-company" class="header__nav__link">О нас</a></li>
+								<li><a href="#contacts" class="header__nav__link">Адреса</a></li>
+							</ul>
+							<div class="header__callback">
+								<a class="header__callback_number" href="tel:+74012519000" >+7 (4012) 519-000</a>
+								<a class="header__callback_description popup-link" href="#callbackPopup">обратный звонок</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page page-404">
+				<section class="warning">
+					<div class="main__wrapper">
+						<img src="img/404.png">
+						<h1 class="page-404__title title">
+							ошибка <span>404</span>
+						</h1>
+						<div class="page-404__description">
+							Что-то пошло не так... 
+							<br>
+							Такой страницы не существует, попробуйте поискать нужную информацию на главной странице
+						</div>
+						<a href="index.html" class="page-404__main-btn btn-dark">
+							Перейти на главную
+						</a>
+					</div> 
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="main__wrapper footer__wrapper">
+					<div class="footer__top">
+						<div class="footer__logo">
+							<a href=""><img src="img/logo.svg" alt="МЕДЭКСПЕРТ"></a>
+						</div>
+						<ul class="footer__nav">
+							<li><a href="#type" class="footer__nav__link">Анализ на короновирус</a></li>
+							<li><a href="#features" class="footer__nav__link">Преимущества</a></li>
+							<li><a href="#before-vaccine" class="footer__nav__link">Обследование</a></li>
+							<li><a href="#about-company" class="footer__nav__link">О нас</a></li>
+							<li><a href="#contacts" class="footer__nav__link">Адреса</a></li>
+						</ul>
+						<div class="footer__callback">
+							<a class="header__callback_number" href="tel:+74012519000">+7 (4012) 519-000</a>
+							<a class="footer__callback_description popup-link" href="#callbackPopup">обратный звонок</a>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<div class="copyright">
+							© ООО “Медэксперт” Все права защищены  2021
+						</div>
+						<div class="privacy-policy">
+							<a class="privacy-policy__link" href="#">Политика конфидециальности</a>
+						</div>
+						<div class="made-by">
+							<p class="made-by__text">Разработано</p>
+							<img src="img/dieztech.svg" alt="#DIEZTECH">
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="callback popup" id="callbackPopup">
+				<div class="callback-wrapper">
+					<div class="callback-content popup-content">
+							<h4 class="callback_title">Обратный звонок</h4>
+							<p class="callback__description">
+								Оставьте свои контактные данные и мы перезвоним Вам в ближайшее время
+							</p>
+							<form class="callback__form" action="#" method="post">
+								<ul class="callback__list">
+									<li>
+									<input type="text" name="full-name" id="fullName" placeholder="Введите свое ФИО">
+									<label for="fullName" class="callback__list__label">Введите свое ФИО</label>
+									</li>
+									<li><input type="tel" class="phone-field" name="phone-callback" id="phoneCallback" placeholder="+7-___-___-__-__" aria-required="true" data-mask="+7 (___) ___-__-__"></li>
+								</ul>
+								<div class="callback-form_description">
+									Нажимая кнопку “Отправить” Вы принимаете условия Соглашения об обработке <a href="#">Персональных данных</a> и ознакомлены с <a href="#">Политикой конфидециальности</a>
+								</div>
+								<div class="info container"></div>
+								<a class="callback__submit btn-dark popup-link" href="#callbackPopupAccepted">Отправить</a>
+							</form>
+							<a class="callback__close-button close-button"></a>
+					</div>
+				</div>
+			</div>
+			<div class="callback callback__accepted popup" id="callbackPopupAccepted">
+				<div class="callback-wrapper">
+					<div class="callback-content popup-content">
+						<div class="callback-accepted">
+							Спасибо!<br>Ваша заявка отправлена.
+							<span>Мы свяжемся с Вами в ближайшее время!</span>
+						</div>
+						<a href="" class="callback__close-button close-button"></a>
+					</div>
+				</div>
+			</div>
+			<div class="map-small popup" id="mapSmall">
+				<div class="map-small_wrapper">
+					<div class="map-small-content popup-content">
+						<div class="map-small__description">
+							ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
+						</div>
+						<div class="map-Selma" id="mapSelma"></div>
+						<a class="map-small__close-button close-button"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="back_to_top" title="Наверх">Наверх</a>
+		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
+		<script defer src="js/datepicker.min.js"></script>
+		<script defer src="js/script.js"></script>
+		<script defer src="js/script.map.js"></script>
+		<script src="https://kit.fontawesome.com/7cc80fa816.js" crossorigin="anonymous"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=556c253c-cbc8-4cac-bc8b-0d19259a3a3d"></script>
+		<script src="https://kit.fontawesome.com/7cc80fa816.js" crossorigin="anonymous"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=556c253c-cbc8-4cac-bc8b-0d19259a3a3d"></script>
+	</body>
+</html>
