@@ -33,8 +33,8 @@ myPlacemark = new ymaps.Placemark([54.742494,20.496812], {
 								<div class="map__phone">
 									<a href="tel:+74012519000" class="map__number">+7 (4012) 251-90-00</a>
 									<div class="phone-icon">
-										<a href="#" ><img src="../img/viber-icon.svg" width="32" height="29"></a>
-										<a href="#"><img src="../img/whatsapp-icon.svg" width="29" height="29"></a>
+										<a href="#" ><img src="img/viber-icon.svg" width="32" height="29"></a>
+										<a href="#"><img src="img/whatsapp-icon.svg" width="29" height="29"></a>
 									</div>
 								</div>
 							</li>
