@@ -596,3 +596,14 @@ new Swiper('.before-vaccine__slide__wrapper',{
 	slideActiveClass: 'slide__active',
 });
 //-------------------------------------------------------------------------------------
+//-------------------------------СЛАЙД КОНТАКТНАЯ ИНФОРМАЦИЯ---------------------------
+//-------------------------------------------------------------------------------------
+$(document).ready(function() {
+	$(".contact__title").click(function(event) {
+		if ($(this).parent('.contact-departament').find('.map_ballon').css('display') == 'block') {
+			$(this).parent('.contact-departament').find('.map_ballon').slideUp();
+		} else {
+			$(this).parent('.contact-departament').find('.map_ballon').slideDown();
+		};
+	});
+});
