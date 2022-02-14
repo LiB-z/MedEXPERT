@@ -270,6 +270,11 @@ $(function() {
 		}
 	});
 })
+//открытие окна ЗАКАЗ ОТПРАВЛЕН
+$('.order-info__submit.popup-link').click(function(){
+	$('.order-accepted.popup').addClass('open');
+});
+
 //     Обновление страницы после отправки.
 $('order-accepted__close-button').click(function() {
 	location.reload();
@@ -286,26 +291,37 @@ $('order-accepted__close-button').click(function() {
 			}
 	});
 });
-
 //---Активация блока ПРЕДСТАВИТЕЛЬ в #form-2
 $(function() {
 	$("input[name='representative']").click(function() {
 		if ($("#representative").is(":checked")) {
-		$(".representative-info-block").show();
+		$(".representative-info-block").slideDown();
 		$('.representative-fullname, .representative-adress').toggleClass('rfield');
 		} else {
-		$(".representative-info-block").hide();
-		$('.representative-name, .representative-adress').toggleClass('rfield');
-		$('.representative-name, .representative-adress').toggleClass('empty_field');
+		$(".representative-info-block").slideUp();
+		$('.representative-fullname, .representative-adress').toggleClass('rfield');
+		$('.representative-fullname, .representative-adress').removeClass('empty_field');
 		}
 	});
 });
-
+//---Активация блока ВЫЕЗЖАЮЩИМ ЗА ГРАНИЦУ в #form-2
+$(function() {
+	$("input[name='travel-abroad']").click(function() {
+		if ($("#travelAbroad").is(":checked")) {
+		$(".travel-abroad-block").slideDown();
+		$('.abroad_country, .abroad-fullname, .abroad-passport, .abroad-passport-info, .abroad_passport_date-field').toggleClass('rfield');
+		} else {
+		$(".travel-abroad-block").slideUp();
+		$('.abroad_country, .abroad-fullname, .abroad-passport, .abroad-passport-info, .abroad_passport_date-field').toggleClass('rfield');
+		$('.abroad_country, .abroad-fullname, .abroad-passport, .abroad-passport-info, .abroad_passport_date-field').removeClass('empty_field');
+		}
+	});
+});
 //---Запись выбранного времени в поле & изменение стиля активной выбранной кнопки
  $('.visitTime__item').on('click', function() {
- 		var anySelected = $('.visitTime__list').find('.visitTime__item.selected').length
+		var anySelected = $('.visitTime__list').find('.visitTime__item.selected').length
 
- 		if($(this).hasClass('active') && anySelected <= 0) {
+		if($(this).hasClass('active') && anySelected <= 0) {
 			$(this).addClass('selected')
 		} else if ($(this).hasClass('active') && anySelected > 0) {
 			$('.visitTime__list').find('.visitTime__item.selected').removeClass('selected');
@@ -313,21 +329,12 @@ $(function() {
 		}
 		$('#visitTime').val($('.visitTime__item.selected').text());
  })
-
 //---Вывод общей информации внизу формы #form-1
 	$('.date-time__field, .datetime-select').on('click', function () {
 		var TimeValue = $('#visitTime').val();
 		var DateValue = $('.visitdate__result').val()
-		console.log((DateValue + " " + TimeValue).replace(": ", ""))
 
 		$(".datetime-out").text((DateValue + " " + TimeValue).replace(": ", ""));
-});
-
-//---Подключение в форме раздела ПРЕДСТАВИТЕЛЬ
-$(document).ready(function() {
-	$(".contact__title").click(function(event) {
-		$(this).parent('.contact-departament').toggleClass('active');
-	});
 });
 
 //---Уведомление о незаполненных полях
@@ -348,7 +355,7 @@ $(window).scroll(() => {
 	scrollDistanceTopFooter = scrollDistanceFromTop - topFooter; 
 	// Если область прокрутки ниже футера - добавляется отступ.
 	if (scrollDistanceFromTop > topFooter) {
-		$('#orderInfoResult').css('margin-bottom',  0 + scrollDistanceTopFooter + 50);
+		$('#orderInfoResult').css('margin-bottom',  0 + scrollDistanceTopFooter + 20);
 	} else  {
 		$('#orderInfoResult').css('margin-bottom', 0);
 	}
@@ -356,6 +363,14 @@ $(window).scroll(() => {
 //---Всплывашка "Представитель"
 $('.special-conditions__icon').hover(function() {
 	$('.special-conditions__description__text').toggleClass('active');
+});
+// screen-size > 750 скрытие модапа выбора времени
+$(function() {
+	$(window).on('resize', function(){
+		if(innerWidth > 750) {
+			$('.datetime-select').removeClass('open');
+		}
+	});
 });
 //--------------------------------------------------------------------------------------
 //----------------------------------------МОДАП ОТКАЗ ----------------------------------
@@ -396,6 +411,13 @@ $(function() {
 			that.value = that.value.replace(res, '');
 			}, 0);
 		});
+		$('#abroadPassport').on('keypress', function() {
+			var that = this;
+			setTimeout(function() {
+			var res = /[^0-9-\s]/g.exec(that.value);
+			that.value = that.value.replace(res, '');
+			}, 0);
+		});
 	});
 });
 //----------------------------------------------------------------------------------
@@ -405,6 +427,10 @@ $(function() {
 $('#birthdate').datepicker({
 	classes: "datepicker__birthdate",
 });
+$('#abroadPassportDate').datepicker({
+	classes: "datepicker__birthdate",
+});
+
 
 //  подключение календаря к полю дата-визита
 var avalibleDates = [10, 11, 13, 24, 18, 21, 28, 29],
@@ -445,7 +471,9 @@ $visitdate.datepicker({
 	 	var visitTimeTitleUpdate = $('#visitTimeTitle').text();
 	 	// исключение избыточных символов
 	 	$('#visitTimeTitle').text(visitTimeTitleUpdate.replace(",","").replace("пн ","").replace("вт ","").replace("ср ","").replace("чт ","").replace("пт ","").replace("сб ","").replace("вс ","").replace(",",""));
-	 
+	 	//---Снятие выбранного времени при изменении даты
+		$('.visitTime__item').removeClass('selected');
+		$('.visitTime__result').val('');
 		//подключение блока времени
 		if ($(".visitdate").val() !== '') {
 			$(".visitTime__list").addClass('active');
@@ -453,7 +481,6 @@ $visitdate.datepicker({
 			$(".result__column").removeClass('disabled');
 			// screen-size < 750 вывод модапа выбора времени
 		 	if(innerWidth < 750) {
-				console.log('click-click')
 				$('#visitTime').val("");
 				$('.datetime-select.popup').find('.visitTime__item.selected').removeClass('selected')
 				$('.datetime-select.popup').addClass('open');

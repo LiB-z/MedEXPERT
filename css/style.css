@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto:wght@300;500&display=swap");
-
 @font-face {
   font-family: "Jost", sans-serif;
   font-weight: normal;
@@ -190,6 +189,9 @@ a.close-button::after {
   display: flex;
   list-style: none;
   margin: 0 auto;
+  padding: 0;
+}
+.header__nav li:last-child a, .footer__nav li:last-child a {
   padding: 0;
 }
 
@@ -740,12 +742,12 @@ a.close-button::after {
   top: -1.125rem;
 }
 
-.datetime__list .datetime__item {
+.datetime__list .datetime__item, .travel-abroad {
   margin-bottom: 1.875rem;
   position: relative;
   z-index: 1;
 }
-.datetime__list .datetime__item select {
+.datetime__list .datetime__item select, .travel-abroad select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -764,17 +766,17 @@ a.close-button::after {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.datetime__list .datetime__item select .select-placeholder {
+.datetime__list .datetime__item select .select-placeholder, .travel-abroad select .select-placeholder {
   display: none;
 }
-.datetime__list .datetime__item label .material-icons {
+.datetime__list .datetime__item label .material-icons, .travel-abroad label .material-icons {
   color: #007C8E;
   position: absolute;
   right: 0;
   top: 0;
   z-index: -1;
 }
-.datetime__list .datetime__item:last-child {
+.datetime__list .datetime__item:last-child, .travel-abroad:last-child {
   margin-bottom: 0;
 }
 
@@ -1416,7 +1418,7 @@ a.close-button::after {
   max-width: 66%;
 }
 
-.contact-person_list, .contact-information__list, .contact-adress__list, .representative-info__list {
+.contact-person_list, .contact-information__list, .contact-adress__list, .representative-info__list, .travel-abroad__list {
   list-style: none;
   width: 100%;
   display: -webkit-box;
@@ -1429,12 +1431,12 @@ a.close-button::after {
   margin-top: 3.5em;
 }
 
-.contact-person_list li, .contact-information__list li, .representative-info__list li {
+.contact-person_list li, .contact-information__list li, .representative-info__list li, .travel-abroad__list li {
   min-width: calc(50% - 0.9375rem);
   margin-right: 1.875rem;
   margin-bottom: 2.1875rem;
 }
-.contact-person_list li:nth-child(2n), .contact-information__list li:nth-child(2n), .representative-info__list li:nth-child(2n) {
+.contact-person_list li:nth-child(2n), .contact-information__list li:nth-child(2n), .representative-info__list li:nth-child(2n), .travel-abroad__list li:nth-child(2n) {
   margin-right: 0;
 }
 
@@ -1471,6 +1473,38 @@ a.close-button::after {
   min-width: calc(50% - 0.9375rem);
 }
 .contact-adress__list li:last-child {
+  margin-right: 0;
+}
+
+.travel-abroad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.travel-abroad span {
+  top: 6.5rem;
+}
+.travel-abroad label .material-icons {
+  top: 1.5rem;
+  left: calc(50% - 2.375rem);
+}
+.travel-abroad .abroad_country {
+  width: calc(50% - 0.9375rem);
+  margin-bottom: 1.3rem;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.travel-abroad__list {
+  margin-top: 1.25rem;
+}
+.travel-abroad__list li:last-child {
+  width: 100%;
   margin-right: 0;
 }
 
@@ -1543,7 +1577,7 @@ a.close-button::after {
   padding-bottom: 0;
 }
 
-.form_registration .representative-info {
+.form_registration .representative-info, .form_registration .travel-abroad {
   padding-bottom: 0;
 }
 
@@ -1565,6 +1599,9 @@ a.close-button::after {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.additional-questions span {
+  top: 4.5rem;
 }
 .additional-questions .fieldset__title {
   margin-top: 1.25rem;
@@ -1608,7 +1645,7 @@ a.close-button::after {
   background: #fff;
   position: fixed;
   left: calc((100vw - 75rem) / 2 + 51.25rem);
-  bottom: -2rem;
+  bottom: 1.5rem;
 }
 .form_registration .order-info__fieldset > .fieldset__title {
   position: relative;
@@ -1650,6 +1687,9 @@ a.close-button::after {
   line-height: 1.12rem;
   display: inline-block;
   float: left;
+}
+.form_registration .order-info__fieldset .order-info__list li .to-pay {
+  display: inline-block;
 }
 .form_registration .order-info__fieldset .order-info__list li:first-child {
   border-bottom: 1px solid #D0DFE4;
@@ -1828,10 +1868,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
   color: #889197;
 }
 
-.callback__list li, .contact-person_list li, .representative-info__list li, .contact-adress__list li, .contact-information__list li {
+.callback__list li, .contact-person_list li, .representative-info__list li, .contact-adress__list li, .contact-information__list li, .travel-abroad__list li {
   position: relative;
 }
-.callback__list li label, .contact-person_list li label, .representative-info__list li label, .contact-adress__list li label, .contact-information__list li label {
+.callback__list li label, .contact-person_list li label, .representative-info__list li label, .contact-adress__list li label, .contact-information__list li label, .travel-abroad__list li label {
   position: absolute;
   top: -1.2em;
   left: -0.8em;
@@ -1849,127 +1889,157 @@ input[type=date]::-webkit-calendar-picker-indicator {
   transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
   transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
-.callback__list li input[type=text]::-webkit-input-placeholder, .contact-person_list li input[type=text]::-webkit-input-placeholder, .representative-info__list li input[type=text]::-webkit-input-placeholder, .contact-adress__list li input[type=text]::-webkit-input-placeholder, .contact-information__list li input[type=text]::-webkit-input-placeholder {
+.callback__list li input[type=text]::-webkit-input-placeholder, .contact-person_list li input[type=text]::-webkit-input-placeholder, .representative-info__list li input[type=text]::-webkit-input-placeholder, .contact-adress__list li input[type=text]::-webkit-input-placeholder, .contact-information__list li input[type=text]::-webkit-input-placeholder, .travel-abroad__list li input[type=text]::-webkit-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=text]::-moz-placeholder, .contact-person_list li input[type=text]::-moz-placeholder, .representative-info__list li input[type=text]::-moz-placeholder, .contact-adress__list li input[type=text]::-moz-placeholder, .contact-information__list li input[type=text]::-moz-placeholder {
+.callback__list li input[type=text]::-moz-placeholder, .contact-person_list li input[type=text]::-moz-placeholder, .representative-info__list li input[type=text]::-moz-placeholder, .contact-adress__list li input[type=text]::-moz-placeholder, .contact-information__list li input[type=text]::-moz-placeholder, .travel-abroad__list li input[type=text]::-moz-placeholder {
   color: transparent;
 }
-.callback__list li input[type=text]:-ms-input-placeholder, .contact-person_list li input[type=text]:-ms-input-placeholder, .representative-info__list li input[type=text]:-ms-input-placeholder, .contact-adress__list li input[type=text]:-ms-input-placeholder, .contact-information__list li input[type=text]:-ms-input-placeholder {
+.callback__list li input[type=text]:-ms-input-placeholder, .contact-person_list li input[type=text]:-ms-input-placeholder, .representative-info__list li input[type=text]:-ms-input-placeholder, .contact-adress__list li input[type=text]:-ms-input-placeholder, .contact-information__list li input[type=text]:-ms-input-placeholder, .travel-abroad__list li input[type=text]:-ms-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=text]::-ms-input-placeholder, .contact-person_list li input[type=text]::-ms-input-placeholder, .representative-info__list li input[type=text]::-ms-input-placeholder, .contact-adress__list li input[type=text]::-ms-input-placeholder, .contact-information__list li input[type=text]::-ms-input-placeholder {
+.callback__list li input[type=text]::-ms-input-placeholder, .contact-person_list li input[type=text]::-ms-input-placeholder, .representative-info__list li input[type=text]::-ms-input-placeholder, .contact-adress__list li input[type=text]::-ms-input-placeholder, .contact-information__list li input[type=text]::-ms-input-placeholder, .travel-abroad__list li input[type=text]::-ms-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=text]::placeholder, .contact-person_list li input[type=text]::placeholder, .representative-info__list li input[type=text]::placeholder, .contact-adress__list li input[type=text]::placeholder, .contact-information__list li input[type=text]::placeholder {
+.callback__list li input[type=text]::placeholder, .contact-person_list li input[type=text]::placeholder, .representative-info__list li input[type=text]::placeholder, .contact-adress__list li input[type=text]::placeholder, .contact-information__list li input[type=text]::placeholder, .travel-abroad__list li input[type=text]::placeholder {
   color: transparent;
 }
-.callback__list li input[type=email]::-webkit-input-placeholder, .contact-person_list li input[type=email]::-webkit-input-placeholder, .representative-info__list li input[type=email]::-webkit-input-placeholder, .contact-adress__list li input[type=email]::-webkit-input-placeholder, .contact-information__list li input[type=email]::-webkit-input-placeholder {
+.callback__list li input[type=email]::-webkit-input-placeholder, .contact-person_list li input[type=email]::-webkit-input-placeholder, .representative-info__list li input[type=email]::-webkit-input-placeholder, .contact-adress__list li input[type=email]::-webkit-input-placeholder, .contact-information__list li input[type=email]::-webkit-input-placeholder, .travel-abroad__list li input[type=email]::-webkit-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=email]::-moz-placeholder, .contact-person_list li input[type=email]::-moz-placeholder, .representative-info__list li input[type=email]::-moz-placeholder, .contact-adress__list li input[type=email]::-moz-placeholder, .contact-information__list li input[type=email]::-moz-placeholder {
+.callback__list li input[type=email]::-moz-placeholder, .contact-person_list li input[type=email]::-moz-placeholder, .representative-info__list li input[type=email]::-moz-placeholder, .contact-adress__list li input[type=email]::-moz-placeholder, .contact-information__list li input[type=email]::-moz-placeholder, .travel-abroad__list li input[type=email]::-moz-placeholder {
   color: transparent;
 }
-.callback__list li input[type=email]:-ms-input-placeholder, .contact-person_list li input[type=email]:-ms-input-placeholder, .representative-info__list li input[type=email]:-ms-input-placeholder, .contact-adress__list li input[type=email]:-ms-input-placeholder, .contact-information__list li input[type=email]:-ms-input-placeholder {
+.callback__list li input[type=email]:-ms-input-placeholder, .contact-person_list li input[type=email]:-ms-input-placeholder, .representative-info__list li input[type=email]:-ms-input-placeholder, .contact-adress__list li input[type=email]:-ms-input-placeholder, .contact-information__list li input[type=email]:-ms-input-placeholder, .travel-abroad__list li input[type=email]:-ms-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=email]::-ms-input-placeholder, .contact-person_list li input[type=email]::-ms-input-placeholder, .representative-info__list li input[type=email]::-ms-input-placeholder, .contact-adress__list li input[type=email]::-ms-input-placeholder, .contact-information__list li input[type=email]::-ms-input-placeholder {
+.callback__list li input[type=email]::-ms-input-placeholder, .contact-person_list li input[type=email]::-ms-input-placeholder, .representative-info__list li input[type=email]::-ms-input-placeholder, .contact-adress__list li input[type=email]::-ms-input-placeholder, .contact-information__list li input[type=email]::-ms-input-placeholder, .travel-abroad__list li input[type=email]::-ms-input-placeholder {
   color: transparent;
 }
-.callback__list li input[type=email]::placeholder, .contact-person_list li input[type=email]::placeholder, .representative-info__list li input[type=email]::placeholder, .contact-adress__list li input[type=email]::placeholder, .contact-information__list li input[type=email]::placeholder {
+.callback__list li input[type=email]::placeholder, .contact-person_list li input[type=email]::placeholder, .representative-info__list li input[type=email]::placeholder, .contact-adress__list li input[type=email]::placeholder, .contact-information__list li input[type=email]::placeholder, .travel-abroad__list li input[type=email]::placeholder {
   color: transparent;
 }
-.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label {
+.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label, .travel-abroad__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-person_list__label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label {
+.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label, .travel-abroad__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-person_list__label {
   opacity: 0.65;
   -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:focus ~ .contact-person_list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-person_list li input[type=text]:focus ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .representative-info__list li input[type=text]:focus ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:focus ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-information__list li input[type=text]:focus ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label {
+.callback__list li input[type=text]:focus ~ .contact-person_list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-person_list li input[type=text]:focus ~ .contact-person_list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .representative-info__list li input[type=text]:focus ~ .contact-person_list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-adress__list li input[type=text]:focus ~ .contact-person_list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .contact-information__list li input[type=text]:focus ~ .contact-person_list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label, .travel-abroad__list li input[type=text]:focus ~ .contact-person_list__label, .travel-abroad__list li input[type=text]:not(:placeholder-shown) ~ .contact-person_list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
           -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label {
+.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label, .travel-abroad__list li input[type=text]:not(:-moz-placeholder-shown) ~ .representative-info__list__label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label {
+.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label, .travel-abroad__list li input[type=text]:not(:-ms-input-placeholder) ~ .representative-info__list__label {
   opacity: 0.65;
   -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:focus ~ .representative-info__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:focus ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:focus ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:focus ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:focus ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label {
+.callback__list li input[type=text]:focus ~ .representative-info__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-person_list li input[type=text]:focus ~ .representative-info__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .representative-info__list li input[type=text]:focus ~ .representative-info__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-adress__list li input[type=text]:focus ~ .representative-info__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .contact-information__list li input[type=text]:focus ~ .representative-info__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label, .travel-abroad__list li input[type=text]:focus ~ .representative-info__list__label, .travel-abroad__list li input[type=text]:not(:placeholder-shown) ~ .representative-info__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
           -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label {
+.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label, .travel-abroad__list li input[type=text]:not(:-moz-placeholder-shown) ~ .travel-abroad__list__label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label {
+.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label, .travel-abroad__list li input[type=text]:not(:-ms-input-placeholder) ~ .travel-abroad__list__label {
   opacity: 0.65;
   -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:focus ~ .contact-adress__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:focus ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:focus ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label {
+.callback__list li input[type=text]:focus ~ .travel-abroad__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label, .contact-person_list li input[type=text]:focus ~ .travel-abroad__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label, .representative-info__list li input[type=text]:focus ~ .travel-abroad__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label, .contact-adress__list li input[type=text]:focus ~ .travel-abroad__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label, .contact-information__list li input[type=text]:focus ~ .travel-abroad__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label, .travel-abroad__list li input[type=text]:focus ~ .travel-abroad__list__label, .travel-abroad__list li input[type=text]:not(:placeholder-shown) ~ .travel-abroad__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
           -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label {
+.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label, .travel-abroad__list li input[type=text]:not(:-moz-placeholder-shown) ~ .contact-adress__list__label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label {
+.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label, .travel-abroad__list li input[type=text]:not(:-ms-input-placeholder) ~ .contact-adress__list__label {
   opacity: 0.65;
   -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=email]:focus ~ .contact-information__list__label, .callback__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:focus ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:focus ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:focus ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:focus ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label {
+.callback__list li input[type=text]:focus ~ .contact-adress__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-person_list li input[type=text]:focus ~ .contact-adress__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .representative-info__list li input[type=text]:focus ~ .contact-adress__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .contact-information__list li input[type=text]:focus ~ .contact-adress__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label, .travel-abroad__list li input[type=text]:focus ~ .contact-adress__list__label, .travel-abroad__list li input[type=text]:not(:placeholder-shown) ~ .contact-adress__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
           -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label {
+.callback__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label, .travel-abroad__list li input[type=email]:not(:-moz-placeholder-shown) ~ .contact-information__list__label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label {
+.callback__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label, .travel-abroad__list li input[type=email]:not(:-ms-input-placeholder) ~ .contact-information__list__label {
   opacity: 0.65;
   -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list li input[type=text]:focus ~ .callback__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:focus ~ .callback__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:focus ~ .callback__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:focus ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:focus ~ .callback__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label {
+.callback__list li input[type=email]:focus ~ .contact-information__list__label, .callback__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-person_list li input[type=email]:focus ~ .contact-information__list__label, .contact-person_list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .representative-info__list li input[type=email]:focus ~ .contact-information__list__label, .representative-info__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-adress__list li input[type=email]:focus ~ .contact-information__list__label, .contact-adress__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .contact-information__list li input[type=email]:focus ~ .contact-information__list__label, .contact-information__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label, .travel-abroad__list li input[type=email]:focus ~ .contact-information__list__label, .travel-abroad__list li input[type=email]:not(:placeholder-shown) ~ .contact-information__list__label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
           -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
       transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
 }
-.callback__list .form_radio label, .contact-person_list .form_radio label, .representative-info__list .form_radio label, .contact-adress__list .form_radio label, .contact-information__list .form_radio label {
+.callback__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label, .travel-abroad__list li input[type=text]:not(:-moz-placeholder-shown) ~ .callback__list__label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+}
+.callback__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-person_list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .representative-info__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .contact-information__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label, .travel-abroad__list li input[type=text]:not(:-ms-input-placeholder) ~ .callback__list__label {
+  opacity: 0.65;
+  -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+}
+.callback__list li input[type=text]:focus ~ .callback__list__label, .callback__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-person_list li input[type=text]:focus ~ .callback__list__label, .contact-person_list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .representative-info__list li input[type=text]:focus ~ .callback__list__label, .representative-info__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-adress__list li input[type=text]:focus ~ .callback__list__label, .contact-adress__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .contact-information__list li input[type=text]:focus ~ .callback__list__label, .contact-information__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label, .travel-abroad__list li input[type=text]:focus ~ .callback__list__label, .travel-abroad__list li input[type=text]:not(:placeholder-shown) ~ .callback__list__label {
+  opacity: 0.65;
+  -webkit-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+          -ms-transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+      transform: scale(0.85) translateY(-1.5em) translateX(0.15em);
+}
+.callback__list .form_radio label, .contact-person_list .form_radio label, .representative-info__list .form_radio label, .contact-adress__list .form_radio label, .contact-information__list .form_radio label, .travel-abroad__list .form_radio label {
   pointer-events: auto;
 }
-.callback__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-person_list .form__birthdate .birthdate-field::-webkit-input-placeholder, .representative-info__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-information__list .form__birthdate .birthdate-field::-webkit-input-placeholder {
+.callback__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .callback__list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder, .contact-person_list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-person_list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder, .representative-info__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .representative-info__list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-adress__list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder, .contact-information__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .contact-information__list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder, .travel-abroad__list .form__birthdate .birthdate-field::-webkit-input-placeholder, .travel-abroad__list .form__abroad_passport_date .birthdate-field::-webkit-input-placeholder {
   color: #889197;
 }
-.callback__list .form__birthdate .birthdate-field::-moz-placeholder, .contact-person_list .form__birthdate .birthdate-field::-moz-placeholder, .representative-info__list .form__birthdate .birthdate-field::-moz-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-moz-placeholder, .contact-information__list .form__birthdate .birthdate-field::-moz-placeholder {
+.callback__list .form__birthdate .birthdate-field::-moz-placeholder, .callback__list .form__abroad_passport_date .birthdate-field::-moz-placeholder, .contact-person_list .form__birthdate .birthdate-field::-moz-placeholder, .contact-person_list .form__abroad_passport_date .birthdate-field::-moz-placeholder, .representative-info__list .form__birthdate .birthdate-field::-moz-placeholder, .representative-info__list .form__abroad_passport_date .birthdate-field::-moz-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-moz-placeholder, .contact-adress__list .form__abroad_passport_date .birthdate-field::-moz-placeholder, .contact-information__list .form__birthdate .birthdate-field::-moz-placeholder, .contact-information__list .form__abroad_passport_date .birthdate-field::-moz-placeholder, .travel-abroad__list .form__birthdate .birthdate-field::-moz-placeholder, .travel-abroad__list .form__abroad_passport_date .birthdate-field::-moz-placeholder {
   color: #889197;
 }
-.callback__list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-person_list .form__birthdate .birthdate-field:-ms-input-placeholder, .representative-info__list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-information__list .form__birthdate .birthdate-field:-ms-input-placeholder {
+.callback__list .form__birthdate .birthdate-field:-ms-input-placeholder, .callback__list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder, .contact-person_list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-person_list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder, .representative-info__list .form__birthdate .birthdate-field:-ms-input-placeholder, .representative-info__list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-adress__list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder, .contact-information__list .form__birthdate .birthdate-field:-ms-input-placeholder, .contact-information__list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder, .travel-abroad__list .form__birthdate .birthdate-field:-ms-input-placeholder, .travel-abroad__list .form__abroad_passport_date .birthdate-field:-ms-input-placeholder {
   color: #889197;
 }
-.callback__list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-person_list .form__birthdate .birthdate-field::-ms-input-placeholder, .representative-info__list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-information__list .form__birthdate .birthdate-field::-ms-input-placeholder {
+.callback__list .form__birthdate .birthdate-field::-ms-input-placeholder, .callback__list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder, .contact-person_list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-person_list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder, .representative-info__list .form__birthdate .birthdate-field::-ms-input-placeholder, .representative-info__list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder, .contact-adress__list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-adress__list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder, .contact-information__list .form__birthdate .birthdate-field::-ms-input-placeholder, .contact-information__list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder, .travel-abroad__list .form__birthdate .birthdate-field::-ms-input-placeholder, .travel-abroad__list .form__abroad_passport_date .birthdate-field::-ms-input-placeholder {
   color: #889197;
 }
-.callback__list .form__birthdate .birthdate-field::placeholder, .contact-person_list .form__birthdate .birthdate-field::placeholder, .representative-info__list .form__birthdate .birthdate-field::placeholder, .contact-adress__list .form__birthdate .birthdate-field::placeholder, .contact-information__list .form__birthdate .birthdate-field::placeholder {
+.callback__list .form__birthdate .birthdate-field::placeholder, .callback__list .form__abroad_passport_date .birthdate-field::placeholder, .contact-person_list .form__birthdate .birthdate-field::placeholder, .contact-person_list .form__abroad_passport_date .birthdate-field::placeholder, .representative-info__list .form__birthdate .birthdate-field::placeholder, .representative-info__list .form__abroad_passport_date .birthdate-field::placeholder, .contact-adress__list .form__birthdate .birthdate-field::placeholder, .contact-adress__list .form__abroad_passport_date .birthdate-field::placeholder, .contact-information__list .form__birthdate .birthdate-field::placeholder, .contact-information__list .form__abroad_passport_date .birthdate-field::placeholder, .travel-abroad__list .form__birthdate .birthdate-field::placeholder, .travel-abroad__list .form__abroad_passport_date .birthdate-field::placeholder {
+  color: #889197;
+}
+.callback__list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .callback__list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder, .contact-person_list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .contact-person_list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder, .representative-info__list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .representative-info__list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder, .contact-adress__list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .contact-adress__list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder, .contact-information__list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .contact-information__list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder, .travel-abroad__list .form__birthdate .abroad_passport_date-field::-webkit-input-placeholder, .travel-abroad__list .form__abroad_passport_date .abroad_passport_date-field::-webkit-input-placeholder {
+  color: #889197;
+}
+.callback__list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .callback__list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder, .contact-person_list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .contact-person_list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder, .representative-info__list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .representative-info__list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder, .contact-adress__list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .contact-adress__list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder, .contact-information__list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .contact-information__list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder, .travel-abroad__list .form__birthdate .abroad_passport_date-field::-moz-placeholder, .travel-abroad__list .form__abroad_passport_date .abroad_passport_date-field::-moz-placeholder {
+  color: #889197;
+}
+.callback__list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .callback__list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder, .contact-person_list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .contact-person_list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder, .representative-info__list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .representative-info__list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder, .contact-adress__list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .contact-adress__list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder, .contact-information__list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .contact-information__list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder, .travel-abroad__list .form__birthdate .abroad_passport_date-field:-ms-input-placeholder, .travel-abroad__list .form__abroad_passport_date .abroad_passport_date-field:-ms-input-placeholder {
+  color: #889197;
+}
+.callback__list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .callback__list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder, .contact-person_list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .contact-person_list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder, .representative-info__list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .representative-info__list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder, .contact-adress__list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .contact-adress__list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder, .contact-information__list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .contact-information__list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder, .travel-abroad__list .form__birthdate .abroad_passport_date-field::-ms-input-placeholder, .travel-abroad__list .form__abroad_passport_date .abroad_passport_date-field::-ms-input-placeholder {
+  color: #889197;
+}
+.callback__list .form__birthdate .abroad_passport_date-field::placeholder, .callback__list .form__abroad_passport_date .abroad_passport_date-field::placeholder, .contact-person_list .form__birthdate .abroad_passport_date-field::placeholder, .contact-person_list .form__abroad_passport_date .abroad_passport_date-field::placeholder, .representative-info__list .form__birthdate .abroad_passport_date-field::placeholder, .representative-info__list .form__abroad_passport_date .abroad_passport_date-field::placeholder, .contact-adress__list .form__birthdate .abroad_passport_date-field::placeholder, .contact-adress__list .form__abroad_passport_date .abroad_passport_date-field::placeholder, .contact-information__list .form__birthdate .abroad_passport_date-field::placeholder, .contact-information__list .form__abroad_passport_date .abroad_passport_date-field::placeholder, .travel-abroad__list .form__birthdate .abroad_passport_date-field::placeholder, .travel-abroad__list .form__abroad_passport_date .abroad_passport_date-field::placeholder {
   color: #889197;
 }
 
@@ -2368,7 +2438,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   }
 
   .additional-questions .empty-fields {
-    top: 4rem;
+    top: 5rem;
   }
 
   .order-info__submit.popup-link {
@@ -2513,9 +2583,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
     top: 1.2rem;
   }
 
-  .contact-person_list li, .contact-information__list li, .representative-info__list li {
+  .contact-person_list li, .contact-information__list li, .representative-info__list li, .travel-abroad__list li {
     margin-right: 0;
     width: 100%;
+  }
+
+  .travel-abroad .abroad_country {
+    width: 100%;
+  }
+  .travel-abroad label .material-icons {
+    left: auto;
+    right: 0;
+    top: 0.25rem;
+  }
+  .travel-abroad span {
+    top: 5.25rem;
   }
 
   .order-button-accept {
@@ -3134,7 +3216,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
           box-shadow: 10px 10px 60px rgba(5, 75, 75, 0.15);
 }
 .vaccine-slide:hover .vaccine-slide__btn, .vaccine-slide:hover .before-vaccine-slide__btn, .before-vaccine-slide:hover .vaccine-slide__btn, .before-vaccine-slide:hover .before-vaccine-slide__btn {
-  width: 12.81rem;
   background: #007C8E;
   border-radius: 30px;
   text-align: center;
@@ -3385,6 +3466,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
   margin: 0;
 }
 
+.map-big {
+  position: relative;
+}
+
 .contacts {
   padding-top: 5rem;
 }
@@ -3420,6 +3505,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 [class*=-balloon] {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+[class*=balloon_layout_normal] {
+  -webkit-box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
+          box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
+  border-radius: 10px;
 }
 
 [class*=balloon__content] {
@@ -3512,6 +3603,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
   text-decoration: none;
   color: #3D5A6A;
   padding: 1rem 0;
+  padding-left: 1.55rem;
 }
 .map__phone .phone-icon {
   position: absolute;
@@ -3530,10 +3622,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .map__week {
   width: 2.75rem;
   margin-right: 0.365rem;
-}
-
-.map__time {
-  width: 5.938rem;
 }
 
 .map__link {
