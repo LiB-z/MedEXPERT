@@ -514,7 +514,7 @@ a.close-button::after {
   }
 
   .header-menu__content {
-    top: 3.3375rem;
+    top: 3.3rem;
     width: 100%;
   }
   .header-menu__content.active {
@@ -4606,7 +4606,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
     font-family: "Jost";
     font-size: 0.875rem;
     line-height: 1.25rem;
-    display: none;
   }
 
   .map__adress {
