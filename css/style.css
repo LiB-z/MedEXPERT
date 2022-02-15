@@ -3491,41 +3491,29 @@ input[type=date]::-webkit-calendar-picker-indicator {
   height: 48.625rem;
 }
 
-[class*=balloon__layout] {
-  -webkit-box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
-          box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
+.customControl {
+  display: none;
+  background-color: #fff;
+  -webkit-box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1);
+          box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1);
   max-width: 29.375rem;
   border-radius: 10px;
+  padding: 2.187rem 3.5rem 3.125rem 2.188rem;
 }
 
-[class*=balloon__close] {
-  margin-right: 0.5rem;
-}
-
-[class*=-balloon] {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-}
-
-[class*=balloon_layout_normal] {
-  -webkit-box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
-          box-shadow: 10px 10px 100px rgba(5, 75, 75, 0.1) !important;
-  border-radius: 10px;
-}
-
-[class*=balloon__content] {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-[class*=balloon__content] ymaps:first-child {
-  overflow: hidden !important;
-  height: 19.6875rem !important;
-  width: 24.375rem !important;
-  padding: 2.187rem 3.5rem 3.125rem 2.188rem !important;
-}
-
-[class*=balloon__tail] {
-  display: none !important;
+.closeButton {
+  -ms-flex-preferred-size: 15px;
+      flex-basis: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 3px;
+  height: 15px;
+  cursor: pointer;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTQgLjdsLS43LS43TDcgNi4zLjcgMCAwIC43IDYuMyA3IDAgMTMuM2wuNy43TDcgNy43bDYuMyA2LjMuNy0uN0w3LjcgN3oiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==") 50% no-repeat;
+  opacity: 0.3;
 }
 
 .map__ballon {
@@ -3579,16 +3567,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 73%;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 .map__info li span {
   display: block;
   padding-bottom: 1rem;
+}
+.map__info li span:last-child {
+  padding-bottom: 0;
 }
 
 .map__phone {
@@ -3598,12 +3583,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .map__phone:first-child {
   min-width: 7.1875rem;
+  margin-right: 1.25rem;
 }
 .map__phone .map__number {
   text-decoration: none;
   color: #3D5A6A;
   padding: 1rem 0;
-  padding-left: 1.55rem;
 }
 .map__phone .phone-icon {
   position: absolute;
@@ -3617,11 +3602,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .map__worktime {
   width: 7.1875rem;
+  margin-right: 1.25rem;
 }
 
 .map__week {
   width: 2.75rem;
-  margin-right: 0.365rem;
+  margin-right: 1rem;
 }
 
 .map__link {
@@ -3646,42 +3632,39 @@ input[type=date]::-webkit-calendar-picker-indicator {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 100vh;
   -webkit-transition: all 0.8s ease 0s;
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
 }
 
 .map-small-content {
   background: #fff;
   width: 100vw;
-  border-radius: 10px;
-  padding: 1.563rem;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  padding: 1.563rem;
+  position: relative;
 }
 
 .map-small__description {
-  padding-bottom: 1.562rem;
+  margin-bottom: 1.562rem;
   font-size: 0.875rem;
   line-height: 1.428rem;
-  max-width: 100%;
+}
+
+.map-Selma#mapSmall {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: auto;
+  width: auto;
 }
 
 .map-small__close-button.close-button {
@@ -3694,10 +3677,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   background: #BBCED2;
   width: 0.78rem;
   height: 2px;
-}
-
-.map-Selma {
-  width: 100%;
 }
 
 .contact-departament {
@@ -3727,6 +3706,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
   right: 5%;
   top: 1.25rem;
   background-color: #007C8E;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 .contact__title span::after {
   content: "";
@@ -3737,9 +3719,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   -webkit-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
       transform: rotate(90deg);
-  -webkit-transition: all 0.4s ease 0s;
-  -o-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
 }
 
 .contact-departament.active .map_ballon {
@@ -3780,10 +3759,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .callback__accepted.popup.open {
   display: block;
-}
-
-.map-small {
-  background: none;
 }
 
 .callback-content {
