@@ -418,7 +418,7 @@ function init () {
 		center: [54.72944849769967,20.513725391238804],
 		controls: ['default'],
 		zoom: 16
-	}, {
+	}, {autoFitToViewport: 'always',
 		yandexMapDisablePoiInteractivity: true
 	});
 
