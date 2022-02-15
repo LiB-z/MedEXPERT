@@ -6,7 +6,9 @@ ymaps.ready(['Panel']).then(function () {
 		center: [54.72944849769967,20.513725391238804],
 		controls: ['default', 'zoomControl'],
 		zoom: 14
-	}, {autoFitToViewport: 'always'});
+	}, {autoFitToViewport: 'always',
+		yandexMapDisablePoiInteractivity: true
+	});
 	//Контент балунов
 	var selma = `
 							<h4 class="map__title">Медэксперт на Сельме</h4>
@@ -416,6 +418,8 @@ function init () {
 		center: [54.72944849769967,20.513725391238804],
 		controls: ['default'],
 		zoom: 16
+	}, {
+		yandexMapDisablePoiInteractivity: true
 	});
 
 // Добавление метки на карту.
