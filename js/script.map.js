@@ -3,14 +3,14 @@
 //-------------------------------------------------------------------------------------
 ymaps.ready(['Panel']).then(function () {
 		map = new ymaps.Map('map', {
-		center: [54.72944849769967,20.513725391238804],
+		center: [54.724038, 20.498731],
 		controls: ['default', 'zoomControl'],
 		zoom: 14
 	}, {autoFitToViewport: 'always',
 		yandexMapDisablePoiInteractivity: true
 	});
 	//Контент балунов
-	var selma = `
+	const selma = `
 							<h4 class="map__title">Медэксперт на Сельме</h4>
 							<div class="map__adress">
 								ул. Франца Лефорта, 12, Калининград, Калининградская обл., 236029
@@ -326,7 +326,7 @@ ymaps.ready(['Panel']).then(function () {
 	map.controls.add(panel, {
 		position: {
 			top: '6.875rem',
-			left: '8.06%'
+			left: '19%'
 		}
 	});
 	// Создадим коллекцию геообъектов.
@@ -407,10 +407,7 @@ map.controls.remove('typeSelector'); // удаляем тип
 map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
 map.controls.remove('rulerControl'); // удаляем контрол правил
 map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-
-
 });
-
 
 //--Карта в всплывающем окне
 function init () {
@@ -594,7 +591,6 @@ mapSmall.geoObjects
 $('.map__link').click(function(){
 	
 		var coords =  $(this).attr('data-mapcenter');
-
 		var selma = [54.742494,20.496812];
 		var kosmicheskaya = [54.713762, 20.500404];
 		var ivannikova = [54.717423, 20.505807];

@@ -625,8 +625,7 @@ $(document).ready(function() {
 //-------------------------------------------------------------------------------------
 //-------------------------------------КАРТА-------------------------------------------
 //-------------------------------------------------------------------------------------
-// Пример реализации боковой панели на основе наследования от collection.Item.
-// Боковая панель отображает информацию, которую мы ей передали.
+// Боковая панель отображает информацию, которую ей передали.
 ymaps.modules.define('Panel', [
     'util.augment',
     'collection.Item'
@@ -635,15 +634,12 @@ ymaps.modules.define('Panel', [
     var Panel = function (options) {
         Panel.superclass.constructor.call(this, options);
     };
-
     // И наследуем его от collection.Item.
     augment(Panel, item, {
         onAddToMap: function (map) {
             Panel.superclass.onAddToMap.call(this, map);
             this.getParent().getChildElement(this).then(this._onGetChildElement, this);
             // Добавим отступы на карту.
-            // Отступы могут учитываться при установке текущей видимой области карты,
-            // чтобы добиться наилучшего отображения данных на карте.
             map.margin.addArea({
                 top: 0,
                 left: 0,
@@ -651,29 +647,47 @@ ymaps.modules.define('Panel', [
                 height: '100%'
             })
         },
-
-        onRemoveFromMap: function (oldMap) {
-            if (this._$control) {
-                this._$control.remove();
-            }
-            Panel.superclass.onRemoveFromMap.call(this, oldMap);
-        },
-
         _onGetChildElement: function (parentDomContainer) {
             // Создаем HTML-элемент с текстом.
             // По-умолчанию HTML-элемент скрыт.
-            this._$control = $('<div class="customControl"><div class="map_ballon"></div><div class="closeButton"></div></div>').appendTo(parentDomContainer);
+            this._$control = $('<div class="customControl"><div class="map_ballon"></div></div>').appendTo(parentDomContainer);
+            this._$control.css('display', 'flex');
             this._$content = $('.map_ballon');
-            // При клике по крестику будем скрывать панель.
-            $('.closeButton').on('click', this._onClose);
-        },
-        _onClose: function () {
-            $('.customControl').css('display', 'none');
+            this._$content.html(`
+							<h4 class="map__title">Медэксперт на Советском проспекте</h4>
+							<div class="map__adress">
+								Советский пр., 14-16, Калининград, Калининградская обл., 236022
+							</div>
+							<ul class="map__info">
+								<li>
+									<p class="map__phone">Телефон:</p>
+									<div class="map__phone">
+										<a href="tel:+74012992033" class="map__number">+7 (4012) 99-20-33</a>
+										<div class="phone-icon">
+											<a href="#" ><img src="img/viber-icon.svg" width="32" height="29"></a>
+											<a href="#"><img src="img/whatsapp-icon.svg" width="29" height="29"></a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="map__worktime">Режим работы:</div>
+									<div class="map__week">
+										<span>Пн-Пт</span>
+										<span>Сб</span>
+										<span>Вс</span>
+									</div>
+									<div class="map__time">
+										<span>8:30 - 20:30</span>
+										<span>8:30 - 16:00</span>
+										<span>9:30 - 16:00</span>
+									</div>
+								</li>
+							</ul>
+			`);
         },
         // Метод задания контента панели.
         setContent: function (text) {
             // При задании контента будем показывать панель.
-            this._$control.css('display', 'flex');
             this._$content.html(text);
         }
     });
