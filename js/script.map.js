@@ -4,8 +4,8 @@
 ymaps.ready(['Panel']).then(function () {
 		map = new ymaps.Map('map', {
 		center: [54.724038, 20.498731],
-		controls: ['default', 'zoomControl'],
-		zoom: 14
+		controls: ['default'],
+		zoom: 14,
 	}, {autoFitToViewport: 'always',
 		yandexMapDisablePoiInteractivity: true
 	});
@@ -406,8 +406,21 @@ map.controls.remove('trafficControl'); // удаляем контроль тра
 map.controls.remove('typeSelector'); // удаляем тип
 map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
 map.controls.remove('rulerControl'); // удаляем контрол правил
-map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+map.controls.remove('zoomControl');
+
+map.controls.add('zoomControl', {
+    size: 'large',
+    float: 'right',
+    position: {
+        top: '300px',
+        right: '50px'
+    }
 });
+
+
+});
+
+
 
 //--Карта в всплывающем окне
 function init () {
