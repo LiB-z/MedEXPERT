@@ -1,38 +1,70 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let url = "http://194.87.111.46:4015/";
-
-    auth();
-    // getDoctors(url);
+document.addEventListener('DOMContentLoaded', () => {
+    // initRequests();
+    new Requests();
 });
 
-function auth(url) {
-    console.log('Авторизуемся');
-    
-    axios.post('http://194.87.111.46:4015/api/login', {
-        login: 'WEBSERVICE_ME_WS',
-        passwd: '39d5718A'
-    })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+class Requests {
+    constructor() {
+        this.url = "https://cab.mdx39.ru/apiv2/";
 
-function getDoctors(url) {
-    console.log('Запрашиваем докторов на ' + url);
+        this.login = "WEBSERVICE_ME_WS";
+        this.passwd = "39d5718A";
 
-    axios.get('http://194.87.111.46:4015/api/doclist')
-        .then(function (response) {
-            console.log(this);
-            console.log(response);
+        this.token = null;
+        this.userId = null;
+
+        this.auth();
+    }
+
+    auth = () => {
+        let context = this;
+
+        axios.post(this.url + 'login', {
+            login: this.login,
+            passwd: this.passwd
         })
-        .catch(function (error) {
-            console.log(this);
-            console.log(error);
+            .then(function (response) {
+                // console.log(response);
+                context.token = response.data.data.token;
+                context.userId = response.data.data.userid;
+
+                context.getDoctors();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    getDoctors = () => {
+        // Запрашиваем докторов
+
+        let context = this;
+
+        // https://cab.mdx39.ru/apiv2/doclist
+        console.log('Токен получен: ' + this.token);
+        console.log('ID пользователя: ' + this.userId);
+
+        axios.get(this.url + 'doclist', {
+            headers: {
+                'Authorization': this.token
+            }
         })
-        .then(function () {
-            console.log('Тык');
-        });
+            .then(function (response) {
+                console.log(response);
+            })
+            // .catch(function (error, response) {
+            //     console.log(error);
+            //     console.log(response);
+            // })
+            .catch(function (error) {
+                console.log(error.response.status) // 401
+                console.log(error.response.data.error) //Please Authenticate or whatever returned from server
+                if (error.response.status == 401) {
+                    //redirect to login
+                }
+            })
+            // .then(function (el) {
+            //     console.log(el);
+            // });
+    }
 }
